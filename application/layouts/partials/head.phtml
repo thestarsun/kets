@@ -1,0 +1,33 @@
+<title>Welcome | Obmen</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/png">
+<meta name="title" content="<?=$this->shareTitle;?>" />
+<meta name="description" content="<?=$this->shareMessage;?>" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<?php echo $this->headMeta()->appendHttpEquiv('Content-Type','text/html; charset=UTF-8')
+                      ->appendHttpEquiv('Content-Language', 'en-US');
+      echo $this->headScript()->prependFile('/js/jquery-1.6.4.min.js')
+//                              ->appendFile('/js/datepicker/jquery.ui.core.js')
+//                              ->appendFile('/js/datepicker/jquery.ui.widget.js')
+//                              ->appendFile('/js/datepicker/jquery.ui.mouse.js')
+//                              ->appendFile('/js/datepicker/jquery.ui.datepicker.js')
+//                              ->appendFile('/js/datepicker/jquery.ui.slider.js')
+//                              ->appendFile('/js/slides.js')
+//                              ->appendFile('/js/dealSlider.js')
+//                              ->appendFile('/js/jquery.hoverIntent.minified.js')
+//                              ->appendFile('/js/colorbox/jquery.colorbox.js')
+//                              ->appendFile('/js/jquery-spin.js')
+//                              ->appendFile('/js/jquery-cookie.js')
+                              ->appendFile('/js/jquery.dropDown.pack.js')
+                              ->appendFile('/js/jquery.groupinputs.min.js')
+                              ->appendFile('/js/jquery.caret.1.2.min.js')
+                              ->appendFile('/js/jquery.tmpl.min.js')
+                              ->appendFile('/js/jquery.form.js');
+//      echo $this->headLink()->appendStylesheet('/css/base.css');
+//                            ->appendStylesheet('/css/colorbox/colorbox.css')
+//                            ->appendStylesheet('/css/slide.css')
+//                            ->appendStylesheet('/css/datepicker/jquery-ui-1.8.16.custom.css');
+       echo $this->headLink()->appendStylesheet('/css/med.css')
+                             ->appendStylesheet('/css/firstform.css')
+//                              ->appendStylesheet('/css/site.css');
+      
+?>

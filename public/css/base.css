@@ -1,0 +1,268 @@
+/*  
+ * Kolya Pavelchuk css base-styles
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, caption{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+header, nav, section, article, aside, footer {
+    display: block
+}
+textarea{
+    resize:none;
+}
+ol, ul {
+    list-style: none;
+}
+label {
+    cursor: pointer;
+}
+blockquote, q {
+    quotes: none;
+}
+:focus {
+    outline: 0;
+}
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    line-height: 18px;
+}
+th, td {
+    padding: 0;
+}
+table, td, th {
+    vertical-align: top;
+}
+th, thead td {
+    font-weight: bold;
+}
+html {
+    height: 100%;
+}
+body {
+    font:  13px/16px Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%; /* If you want your footer pressed to the content, remove this line */
+    line-height: normal;
+}
+a {
+	color: #000;
+	outline: none;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+/*h1, h2, h3, h4, h5, h6{
+	margin: 0 0 8px;
+	line-height: 160%;
+}*/
+/*p {
+	margin: 0 0 10px
+}*/
+img {
+	border: none;
+}
+input {
+	vertical-align: middle;
+}
+
+h1 {font-size: 20px;}
+h2 {font-size: 18px;}
+h3 {font-size: 16px;}
+h4 {font-size: 15px;}
+h5 {font-size: 14px;}
+h6 {font-size: 13px;}
+
+.float-l {float: left;}
+.float-r {float: right;}
+.float-n {float: none;}
+
+.size-10 {font-size: 9px;}
+.size-10 {font-size: 10px;}
+.size-11 {font-size: 11px;}
+.size-12 {font-size: 12px;}
+.size-13 {font-size: 13px;}
+.size-14 {font-size: 14px;}
+.size-15 {font-size: 15px;}
+.size-16 {font-size: 16px;}
+.size-17 {font-size: 17px;}
+.size-18 {font-size: 18px;}
+.size-20 {font-size: 20px;}
+.size-21 {font-size: 21px;}
+.size-22 {font-size: 22px;}
+.size-24 {font-size: 24px;}
+.size-26 {font-size: 26px;}
+.size-28 {font-size: 28px;}
+.size-29 {font-size: 29px;}
+.size-30 {font-size: 30px;}
+.size-32 {font-size: 32px;}
+.size-34 {font-size: 34px;}
+
+.text-l {text-align: left;}
+.text-c {text-align: center;}
+.text-j {text-align: justify;}
+.text-r {text-align: right;}
+
+.text-tr-up {text-transform: uppercase;}
+.text-tr-low { text-transform: lowercase;}
+
+.bold{font-weight: bold;}
+.font-normal{font-weight: normal;}
+
+.line-h-n{line-height: normal;}
+.line-h-10{line-height: 10px;}
+.line-h-15{line-height: 15px;}
+.line-h-20{line-height: 20px;}
+.line-h-25{line-height: 25px;}
+.line-h-30{line-height: 30px;}
+.line-h-35{line-height: 35px;}
+
+.clear, .clr {
+    clear: both;
+	margin: 0;
+    padding: 0;
+}
+.w5  { width: 5%;  }    .w15 { width: 15%; }    .w25 { width: 25%; }     .w35 { width: 35%; }    .w45 { width: 45%; }
+.w10 { width: 10%; }    .w20 { width: 20%; }    .w30 { width: 30%; }     .w40 { width: 40%; }    .w50 { width: 50%; }
+.w55 { width: 55%; }    .w65 { width: 65%; }    .w75 { width: 75%; }     .w85 { width: 85%; }    .w95 { width: 95%; }
+.w60 { width: 60%; }    .w70 { width: 70%; }    .w80 { width: 80%; }     .w90 { width: 90%; }    .w100{ width:100%; }
+
+.martb-5 {margin-top: -5px;}
+.mar5{margin: 5px;} 
+.mar10{margin:10px;} 
+.mar15{margin:15px;} 
+.mar20{margin:20px;} 
+.mar25{margin:25px;} 
+.marb5{margin-bottom: 5px;}
+.mart10 {margin-top: 10px;display: inline-block; width:80px;}
+
+.martb5{margin: 5px 0;}
+.martb10{margin: 10px 0;}
+.martb15{margin: 15px 0;}
+.martb20{margin: 20px 0;}
+.martb25{margin: 25px 0;}
+
+.marlr5{margin: 0 5px;}
+.marlr10{margin: 0 10px;}
+.marlr15{margin: 0 15px;}
+.marlr20{margin: 0 20px;}
+.marlr25{margin: 0 25px;}
+.marr10{margin-right: 10px;}
+
+.padding5{padding: 5px 10px 5px 10px !important;}
+.pad3{padding: 3px;} 
+.pad5{padding: 5px;} 
+.pad10{padding: 10px;}
+.pad15{padding: 15px;}
+.pad20{padding: 20px;}
+.pad25{padding: 25px;}
+
+.padlr5{padding: 0 5px;}
+.padlr10{padding: 0 10px;}
+.padlr15{padding: 0 15px;}
+.padlr20{padding: 0 20px;}
+.padlr25{padding: 0 25px;}
+
+.padtb5{padding: 5px 0;}
+.padtb10{padding: 10px 0;}
+.padtb15{padding: 15px 0;}
+.padtb20{padding: 20px 0;}
+.padtb25{padding: 25px 0;}
+
+.padb5{padding-bottom: 5px;}
+.padb10{padding-bottom: 10px;}
+
+.block{display: block;}
+.none {display: none;}
+.inline{display: inline;}
+.inline-b{display: inline-block;}
+
+.hidden{visibility: hidden;}
+.show{visibility: visible;}
+
+.va-top{vertical-align: top;}
+.va-base{vertical-align: baseline;}
+.va-middle{vertical-align: middle;}
+.va-inherit{vertical-align: inherit;}
+
+/* ------------------------------- positions --------------------- */
+.pos-a {position: absolute;}
+.pos-r {position: relative;}
+.pos-f {position: fixed;}
+.pos-i {position: inherit;}
+
+
+/* ------------------------- corners ------------------------------------ */
+.corner-12{
+	border-radius: 12px;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	-ms-border-radius: 12px;
+}
+.corner-10{
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-ms-border-radius: 10px;
+}
+.corner-8{
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-ms-border-radius: 8px;
+}
+.corner-5{
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-ms-border-radius: 5px;
+}
+.corner-3{
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-ms-border-radius: 3px;
+}
+.corner-bot-5{
+	border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	-webkit-border-radius: 0 0 5px 5px;
+	-ms-border-radius: 0 0 5px 5px;
+}
+
+/* ------------------------------- messages ---------------------- */
+.error{
+	border: 2px solid #d90000;
+	text-align: center;
+	font-weight: bold;
+	color: #d90000;	
+	line-height: 20px;
+}
+.error p{
+	margin: 0 0 3px;
+}
+
+/* ------------------------------- backgrounds ------------------- */
+
+.bg-white{background-color: #fff;}
+.bg-black{background-color: #000;}

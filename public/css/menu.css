@@ -1,0 +1,92 @@
+#menuwrapper {
+	border-top: 0px solid #000;
+	border-bottom: 0px solid #333;
+	background-color: #ffffff;
+	background-repeat: repeat-x;
+
+}
+.clearit {
+	clear: both;
+	height: 0;
+	line-height: 0.0;
+	font-size: 0;
+}
+#menubar {
+	width: 800px;
+}
+#menubar, #menubar ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-family: Helvetica;
+}
+#menubar a {
+	display: block;
+	text-decoration: none;
+	font-size: 36px;
+	font-weight: 100;
+	color: #000000;
+}
+#menubar a.trigger {
+	background-image: url("../images/down.png");
+	background-repeat: no-repeat;
+	background-position: right;
+        height: 131px;
+        min-width: 115px;
+        text-align: center;
+        line-height: 126px;
+        padding: 0 20px 0 0;
+        font-family: HelveticaNeue;
+}
+a.first_arrow {
+    background-position: 110px center !important;
+}
+a.last_arrow {
+    background-position: 95px center !important;
+}
+#menubar li {
+	float: left;
+	width: 12em;
+}
+#menubar li {position: relative;}
+
+/* hide from IE mac \*/
+#menubar li {position: static; width: auto;}
+/* end hiding from IE5 mac */
+
+#menubar ul li  {
+	width: 18em;
+	z-index: 0;
+	}
+#menubar ul li a  {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+}
+#menubar li ul {
+    background: url("../images/nav_hover_green.png") no-repeat scroll center center;
+    display: none;
+    height: 202px;
+    padding: 42px 0 0 60px;
+	position: absolute;
+    top: 80px;
+    width: 182px;
+    z-index: 100;
+}
+#menubar li ul li {
+    margin-bottom: 3px;
+} 
+#menubar li ul li a:hover {
+    text-decoration: underline;
+}
+#menubar li:hover ul, #menubar li.p7hvr ul {
+	display: block;
+}
+.blue_hover_bg {
+	display: block;
+}
+#menubar .blue_hover_bg:hover,
+#menubar .blue_hover_bg.active-hover{
+    background: url("../images/nav_hover_blue.png") no-repeat center center;
+}

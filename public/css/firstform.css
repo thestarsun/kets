@@ -1,0 +1,144 @@
+/* 
+    Document   : firstform
+    Created on : Jan 20, 2012, 9:41:46 PM
+    Author     : thestarsun
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+.plus{
+    background-image: url('');
+}
+.tooltip{
+    position:absolute;
+    width:250px;
+
+    background-position:left center;
+    color:#333333;
+    padding:5px 5px 5px 8px;
+    font-size:12px;
+    font-family:Verdana, Geneva, sans-serif;
+    background-color: #C8E7FC;
+    border: 1px solid #0089EA;
+}
+.tooltip-image{
+    float:left;
+    margin-right:5px;
+    margin-bottom:5px;
+    margin-top:3px;
+}
+.tooltip span{
+    font-weight:700;
+    color:#0066FF;
+}
+.row div {
+    display: inline-block;
+}
+div.input div{
+    display: inline-block;
+    margin: 4px;
+    vertical-align: top;
+    width: 100px;
+    font-size: 11pt;
+    /*        border-color: black*/
+}
+div.error{
+    color: #B02C0F;
+    font-size: 13px;
+    font-style: italic;
+    text-align: right;
+    padding-right: 17px;
+}
+.plus{
+    float:right; 
+    cursor: pointer;
+    margin: 5px;
+}
+.snoska{
+    font-size: 12px;
+    margin: 5px
+}
+.submit{
+    margin: 20px
+}
+.phone{
+    width: 110px
+}
+.stack{
+    width: 450px
+}
+#form{
+    text-align: inherit;
+}
+.lRegistation{
+     background-color: #E5E5E5;
+    border: 1px solid #DEDEDD;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 5px 5px 6px #BEBEBD;
+    color: #444444;
+    float: left;
+/*    height: 400px;*/
+    padding: 0 8px 39px 20px;
+    width: 44%;
+}
+.rRegistation{
+/*    border-left: 1px solid #9E9F9F;*/
+    float: left;
+    height: 400px;
+    padding: 10px;
+    width: 41%;
+}
+.boxRegistration{
+    height: 500px;
+    padding: 20px;
+}
+.btn_restr{
+    float: right;
+    margin-right: 40px;
+    margin-top: 25px;
+}
+h1{
+    font-size: 14pt;
+    margin: 29px 0 24px;
+}
+
+._2{
+    width: 35px;
+}
+._3{
+    width: 40px;
+}
+._7{
+    width: 100px;
+}
+.group1{
+    font-family: Georgia;
+    font-size: 11pt;
+    padding: 1px 0;
+    text-align: center;
+    margin: 0 2px;
+}
+.group_tel_div{
+    width: 235px !important;
+}
+._text{
+    font-size: 14pt;
+}
+._input_reg{
+    width: 230px;
+}
+
+.red_border{
+    border: 1px solid #ED1616;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 2px #ED1616;
+    margin: 2px;
+}

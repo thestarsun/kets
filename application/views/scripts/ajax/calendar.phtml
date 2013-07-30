@@ -1,0 +1,30 @@
+<div>
+      <div id="calendar">
+    <div class = "calendarHead">
+        <div id ="l" style="display: none"><?=$this->L?></div>
+        <div class = "listweek" style="float: left;"><a onclick ="getPreviousWeek()"><?=$this->translate('Previous week');?></a></div>
+        <div class = "listmonth" >
+            <span id='month'  attr="<?=$this->monthNumber?>"><?=$this->month?></span>
+            <span id='year'><?=$this->year?></span>
+        </div>
+        <div class = "listweek" style="float: left;"><a onclick ="getNextWeek()"><?=$this->translate('Next week')?></a></div>
+        <div style="clear:both"></div>
+    </div>
+    <table >
+        <thead>
+            <th></th>
+            <th><span id='fday'><?=$this->week_start?></span> <br><?=$this->translate('Monday')?></th>
+            <?$now =  strtotime($this->week_start.' '.$this->month.' '.$this->year)?>
+            <th><?=date('j', strtotime("+1 day", $now))?><br> <?=$this->translate('Thursday')?></th>
+            <th><?=date('j', strtotime("+2 day", $now))?><br> <?=$this->translate('Wednesday')?></th>
+            <th><?=date('j', strtotime("+3 day", $now))?><br> <?=$this->translate('Tuesday')?></th>
+            <th><?=date('j', strtotime("+4 day", $now))?><br> <?=$this->translate('Friday')?></th>
+            <th><?=date('j', strtotime("+5 day", $now))?> <br><?=$this->translate('Saturday')?></th>
+            <th><?=date('j', strtotime("+6 day", $now))?><br> <?=$this->translate('Sunday')?></th>
+        </thead>
+        <tbody id="calendarBody">
+            
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,147 @@
+.clinicName{
+    font-weight: bold;
+}
+.clinicTypeText{
+    color: #CA3D26;
+}
+#hoshital_type{
+        /*border: 1px rgb(119, 115, 115) solid;*/
+        width:  600px;
+        height: 300px;
+    }
+    .hospital_select:hover{
+        background: gainsboro;
+    }
+    .hospital_select{
+        cursor: pointer;
+    }
+/*    .hospital_select:nth-child(even){
+        background: #ffc4c4;
+    }*/
+    .calendarHead{
+        width: 780px;
+margin: 33px auto 5px;
+text-align: center;
+    }
+    .listweek{
+        margin: 5px;
+        font-size: 14pt;
+    }
+    .listmonth{
+       width: 555px;
+margin: auto;
+float: left;
+text-align: center;
+        font-size: 18pt;
+        color: rgb(199, 72, 72);
+    }
+    table
+{
+border-collapse:collapse;
+width: 840px;
+margin: 0 auto;
+table-layout: fixed;
+}
+table,th, td
+{
+border: 1px solid rgb(247, 215, 215);
+text-align: center;
+font-size: 12pt;
+}
+
+
+th{
+    color: white;
+    background: rgb(190, 58, 30);;
+    font-weight: bold;
+    /*padding: 2px 13px;*/
+}
+th span.week_day{
+    color: white;
+    background: rgb(190, 58, 30);;
+    font-weight: normal;
+    font-size: 12pt;
+    /*padding: 2px 13px;*/
+}
+th:nth-child(1){
+    width: 120px;
+}
+tr:nth-child(even){
+    background: rgb(248, 234, 226);
+    padding: 1px 1px;
+}
+tr:nth-child(odd){
+    background: white;
+}
+.hospital_select:nth-child(even){
+    background: rgb(248, 234, 226);
+}
+.hospital_select:nth-child(odd){
+    background: white;
+}
+table.excel {
+	border-style:ridge;
+	border-width:1;
+	border-collapse:collapse;
+	font-family:sans-serif;
+	font-size:12px;
+}
+table.excel thead th, table.excel tbody th {
+	background:#CCCCCC;
+	border-style:ridge;
+	border-width:1;
+	text-align: center;
+	vertical-align:bottom;
+}
+table.excel tbody th {
+	text-align:center;
+	width:20px;
+}
+table.excel tbody td {
+	vertical-align:bottom;
+}
+table.excel tbody td {
+    padding: 0 3px;
+	border: 1px solid #EEEEEE;
+}
+ .doc_type_select{
+    width: 223px;
+margin: 0 9px;
+ }
+ .left_select{
+     width: 230px;
+     float: left;
+ }
+ .search{
+  width: 96%;
+    margin: 0 8px 8px;
+ }     
+ .center_select{
+     float: left;
+     margin-bottom: 20px;
+ }
+ .hoshital_type_select{
+   width: 633px;
+margin: 0 0 0 22px;
+ }
+ .clear{
+    clear: both;
+ } 
+ .search_right{
+     width: 20%;
+     margin: 0px 5px; 
+ }
+ .top_inputs{
+     padding: 15px 5px;
+ }
+ .small_img{
+     width: 30px;
+ }
+ .clinic_info{
+     background-color: rgb(241, 232, 208);
+border-radius: 8px;
+padding: 10px 30px;
+margin: 19px auto;
+width: 784px;
+box-shadow: 3px 3px 8px rgb(207, 207, 207);
+ }

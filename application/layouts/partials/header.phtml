@@ -1,0 +1,58 @@
+<?$lang = explode('/', $_SERVER['REQUEST_URI']); $lang= $lang[1];?>
+<header>
+    <div class="headerTop">
+        <div class ="logo">
+           <a href="<?= $this->url(array('lang'=>$lang), 'base')?>"><img src="/image/logo.png"/></a> 
+        </div>
+        <div class="logoTitle">
+            <?= $this->translate('Medical information help of Ukraine') ?>
+        </div>
+        <div class="langBlock">
+            <a href="/uk/<?=substr($_SERVER['REQUEST_URI'], 4)?>" style="margin:5px;"><img src="/image/icons/Ukraine.png"></a>
+            <a href="/ru/<?=substr($_SERVER['REQUEST_URI'], 4)?>" style="margin:5px;"><img src="/image/icons/Russian.png"></a>
+        </div>
+    </div>  
+    <div class="clear"></div>
+    <nav class="topNav">
+        <div class="line"></div>
+        <ul>
+            <li class="f_li"><a href="<?= $this->url(array('lang'=>$lang), 'base', true)?>" ><?= $this->translate('Help') ?></a></li>
+            <!--<li><a href="" ><?= $this->translate('For the insured') ?></a></li>-->
+            <li><a href="<?= $this->url(array('lang'=>$lang), 'aboutservice', true)?>" ><?= $this->translate('About service') ?></a></li>
+            <li><a href="<?= $this->url(array('lang'=>$lang), 'forclinics', true)?>" ><?= $this->translate('For clinics') ?></a></li>
+            <li><a id ="profil" style ="display: none;" href="<?= $this->url(array('lang'=>$lang), 'profile')?>" ><?= $this->translate('Profile') ?></a></li>
+            <li class="l_li" id="loginMarker">
+                <a id ="exit" style ="display: none;" href="<?= $this->url(array('lang'=>$lang), 'logout')?>" onclick ="logout()"><?= $this->translate('Logout') ?></a>
+                <a id ="enter" style ="display: none;" href="<?= $this->url(array('lang'=>$lang), 'login')?>" ><?= $this->translate('Login') ?></a>
+            </li>
+        </ul>
+    </nav>
+    
+</header>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        //==> tmp remove login-------------------------
+//        login = <?// if (!empty($_SESSION['clientID'])): ?>1;<?// else: ?>0;<? //endif; ?>
+//        if (login == 0){
+//            $('#enter').show();
+//            $('#exit').hide();
+//            $('#profil').hide();
+//        }else{
+//            $('#enter').hide();
+//            $('#exit').show();
+//            $('#profil').show();
+//        }
+//---------------------login remove
+    }); 
+//    function logout(){
+//        $.post('/default/auth/logout',function(result){
+//                if(result.success == 1){
+//                   $('#exit').hide();
+//                   $('#profil').hide();
+//                   $('#enter').show();
+//                   window.location.reload('<?//=$_SERVER["HTTP_REFERER"].$this->url(array(), 'base')?>')
+//                }
+//        }, 'json');
+//    }
+</script>

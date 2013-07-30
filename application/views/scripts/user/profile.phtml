@@ -1,0 +1,207 @@
+<div class="boxRegistration">
+<div class="lRegistation">
+    <h1><?= $this->translate('Your profile') ?></h1>
+<form id="profilform" action="/user/profile" method="post">
+    <div class="input">
+            <div>
+                <label for="user_L"><?= $this->translate('Last name') ?></label>
+            </div>
+            <div rel="tooltip" content="">
+                <input id="user_L" class="_input_reg" type="text" name="user_L" placeholder="Прізвище" value="<?= $this->user_L?>"/>
+            </div>
+        </div>
+        <div class="error"> 
+            <span><?= $this->mistake['user_L'] ?></span>
+        </div>    
+    <div class="input">
+            <div>
+                <label for="user_F"><?= $this->translate('First name') ?></label>
+            </div>
+            <div rel="tooltip" content="">
+                <input id="user_F" class="_input_reg" type="text" name="user_F" placeholder="Ім’я" value="<?= $this->user_F?>"/>
+            </div>
+        </div>
+        <div class="error"> 
+            <span><?= $this->mistake['user_F'] ?></span>
+        </div>    
+    <div class="input">
+            <div>
+                <label for="user_M"><?= $this->translate('Middle name') ?></label>
+            </div>
+            <div rel="tooltip" content="">
+                <input id="user_M" class="_input_reg" type="text" name="user_M" placeholder="По-батькові" value="<?= $this->user_M?>"/>
+            </div>
+        </div>
+        <div class="error"> 
+            <span><?= $this->mistake['user_M'] ?></span>
+        </div>    
+    <div class="input">
+            <div>
+                <label for="region"><?= $this->translate('Region') ?></label>
+            </div>
+            <div rel="tooltip" content="Имя может состоять из любого количества букв, тире, апострофов, пробелов на кирилицой ли латинскими буквами">
+                <select name ="region" id ="regionReg">
+                    <option value=""> -- <?= $this->translate('Select region') ?> --</options>
+                    <?foreach($this->regions as $regionId => $regionName):?>
+                        <option value="<?=$regionId?>"<?if(!empty($this->region)&& ($this->region == $regionId)):?>selected<?endif;?>><?=$regionName?></option>
+                    <?endforeach;?>
+                </select>
+            </div>
+        </div>
+        <div class="error"> 
+            <span><?= $this->mistake['region'] ?></span>
+        </div>   
+    <div class="input">
+            <div>
+                <label for="city"><?= $this->translate('City') ?></label>
+            </div>
+            <div rel="tooltip" content="Имя может состоять из любого количества букв, тире, апострофов, пробелов на кирилицой ли латинскими буквами">
+                <select name="city" id ="cityReg">
+                    <option id="cityOptions"value=""> -- <?= $this->translate('Select city') ?> --</options>
+                </select>
+            </div>
+        </div>
+        <div class="error"> 
+            <span><?= $this->mistake['city'] ?></span>
+        </div>   
+    <div class="row">
+        <div class="input">
+            <div>
+                <label for="phone"><?= $this->translate('Phone') ?> </label>
+            </div>
+            <div rel="tooltip" content="Телефон може містити лише 12 цифр та знаки +, (, )" class="group_tel_div"><span class="_text">+</span><input id="phone1" type="text" maxlength="2" class="group1 _2" name="phone1" value="<?= $this->phone1?>"><span class="_text">(</span><input id="phone2" type="text" maxlength="3"  class="group1 _3" name="phone2" value="<?= $this->phone2?>"><span class="_text">)</span><input id="phone3" type="text" maxlength="7" class="group1 _7" name="phone3" value="<?= $this->phone3?>">
+            </div>
+        </div>
+        <div class="error"> 
+            <span><?= $this->mistake['phone'] ?></span>
+        </div>        
+    </div>
+    <div class="row">
+        <div class="input">
+            <div>
+                <label for="email"><?= $this->translate('Email') ?></label>
+            </div>
+            <div>
+                <input id="email" class="_input_reg" type="email" name="email" placeholder="Email" value="<?= $this->email?>"/>
+            </div>
+        </div>
+        <div class="error">
+            <span><?= $this->mistake['email'] ?></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="regBtn btn_restr">
+            <a href="javascript:void(0)" id="regLink"><?= $this->translate('Save') ?></a>
+        </div>
+<!--        <div class="submit">
+            <input type="submit" value="Submit" />
+        </div>-->
+    </div>
+</form>
+</div>
+<div class="rRegistation">
+    
+</div>
+</div>
+<script>
+    
+    $(document).ready(function(){
+        if (navigator.userAgent.toLowerCase().match('chrome')){
+            $('.group_tel_div input').each(function(){
+                $(this).attr('style','margin: 0 1px;');
+            })
+            $('._7').attr('style','width: 118px; margin: 0 1px;');
+        }
+        $('#regLink').bind('click', function(){
+            validForm();
+           
+        });
+        $('form').keydown(function(event){
+            if(event.keyCode == 13)
+                validForm();
+        })
+        // ----- Подтяжка городов к областям -----
+        if($('#regionReg').val()!= 0){
+            $.post('/default/ajax/city', {id:$('#regionReg').val()}, function(resp){$('#cityReg').empty().append(resp);
+            $('#cityReg option[value="<?=$this->city?>"]').attr('selected', 'selected');}, 'html');
+            
+        }
+        $('#regionReg').change(function(){
+            if($('#regionReg').val()!= 0)
+            $.post('/default/ajax/city', {id:$('#regionReg').val()}, function(resp){$('#cityReg').empty().append(resp)}, 'html');
+        else
+            $('#cityReg').empty().append('<option id="cityOptions"value=""> -- <?= $this->translate('Select city') ?> -- </options>');
+        })
+        // --------------------------------------------
+        //----Телефон несколькими инпутами
+        $('.group1').groupinputs();
+        //----Затирка елементов в инпутах телефона если это не цифры
+        $('.group1').on('input propertychange', function(e) {
+        var elem = $(e.target),
+            value = elem.val(),
+            caret = elem.caret(),
+            newValue = value.replace(/[^0-9]/g, ''),
+            valueDiff = value.length - newValue.length;
+
+        if (valueDiff) {
+            elem
+                .val(newValue)
+                .caret(caret.start - valueDiff, caret.end - valueDiff);
+        }
+        });
+    
+    })
+    //------Валидация полей формы
+        
+    function validForm(){
+    var errors = {};
+    var phone1 = document.getElementById('phone1');
+    var phone2 = document.getElementById('phone2');
+    var phone3 = document.getElementById('phone3');
+    var email  = document.getElementById('email');
+    var user_L = document.getElementById('user_L');
+    var user_F= document.getElementById('user_F');
+    var user_M = document.getElementById('user_M');
+    console.log(phone1.value.length);
+    $('#phone1, #phone2, #phone3, #password, #password_controll, #user_L, #user_F, #user_M, #email').removeClass('red_border');
+        if(phone1.value.length<2){
+            $('#phone1').addClass('red_border');
+            errors['phone1']='false';
+        }
+        if(phone2.value.length<3){
+            $('#phone2').addClass('red_border');
+            errors['phone2']='false';
+        }
+        if(phone3.value.length<7){
+            $('#phone3').addClass('red_border');
+            errors['phone3']='false';
+        }
+        if(email.value.match(/^[0-9A-z_\.]+@[A-z_-]+\.[A-z]{2,3}$/)== null){
+                $('#email').addClass('red_border');
+                errors['email']='false';
+        }
+        if(user_L.value.match(/^[А-я]+$/)== null){
+            $('#user_L').addClass('red_border');
+            errors['user_L']='false';
+        }
+        if(user_F.value.match(/^[А-я]+$/)== null){
+            $('#user_F').addClass('red_border');
+            errors['user_F']='false';
+        }
+        if(user_M.value.match(/^[А-я]+$/)== null){
+            $('#user_M').addClass('red_border');
+            errors['user_M']='false';
+        }
+        if(errors.isEmpty()){
+           $('#profilform').submit();  
+        }    
+    }
+    //---------------------------------------------
+    //---------------Проверка объекта на пустоту
+    Object.prototype.isEmpty = function() { 
+    for (var prop in this) { 
+    if (this.hasOwnProperty(prop)) 
+    return false; } 
+    return true; }; 
+    //----------------------------------------------
+</script>

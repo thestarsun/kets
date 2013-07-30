@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html land="ru">
+
+    <head>
+        <?php echo $this->partial("head.phtml"); ?>
+    </head>
+    <body>
+        <div id="wraper">
+            <section>
+                <?php echo $this->render("header.phtml"); ?>
+                    <div id="content">
+                        <?php echo $this->layout()->content; ?>
+                    </div>
+            </section>
+            <?php echo $this->partial("footer.phtml"); ?>
+        </div>
+    </body>
+
+</html>
