@@ -24,23 +24,35 @@
             <option value=""><?=$this->translate('All')?></option>
             <?if(!empty($this->clinicType)):?>
             <?foreach($this->clinicType as $clinicType):?>
-                <option value="<?=$clinicType['idtbl_clinic_type']?>"><?=$clinicType[$this->lang.'_name']?></option>
+                <option value="<?=$clinicType['idtbl_clinic_type']?>" <?if($clinicType['idtbl_clinic_type'] == $this->clinic_managnent_form):?>selected="selected"<?endif;?>><?=$clinicType[$this->lang.'_name']?></option>
             <?endforeach;?>
             <?endif;?>
         </select>
     </div>    
 <div class = "left_select">
-    <input id="searchinput" type="text" placeholder="<?= $this->translate('Пошук: кардіолог або серце') ?>" class = "search">
+    <input id="searchinput" type="text" placeholder="<?= $this->translate('Пошук: кардіолог або серце') ?>" class = "search" value="<?=$this->search_doctor_speciality?>">
     <select id="doctortype" size="16"  class = "doc_type_select">
         <?if(!empty($this->doctorType)):?>
             <?foreach($this->doctorType as $doctorType):?>
-                <option value="<?=$doctorType['TypeDocID']?>"><?=$doctorType[$this->lang.'_name']?></option>
+                <option value="<?=$doctorType['TypeDocID']?>" <?if($doctorType['TypeDocID'] == $this->doctor_speciality):?>selected="selected"<?endif;?>><?=$doctorType[$this->lang.'_name']?></option>
             <?endforeach;?>
          <?endif;?>
     </select>
 </div>
 <div class = "center_select">
     <div id ="hoshital_type" class = "hoshital_type_select" style="overflow-x: hidden;">
+        <?if(!empty($this->hospitals)):?>
+            <?foreach($this->hospitals as $hospital):?>
+                <div class = "hospital_select" paramID="<?=$hospital['ClinicID']?>">
+                    <span class = "clinicName">
+                        <?=$hospital['ClinicName'.strtoupper($this->lang)]?>
+                    </span>
+                    <br>
+                    <span class = "clinicTypeText"><?=$hospital['ClinicType'.strtoupper($this->lang)]?></span> &nbsp;&nbsp;&nbsp;
+                    <span class = "textDescribe"><?=$hospital['ClinicStreet'.strtoupper($this->lang)]?>&nbsp;&nbsp;&nbsp;<?=$hospital['ClinicTel']?></span>
+                </div>
+            <?endforeach;?>
+        <?else:?>
         <div class="rr_welcome_text"><p class="rr_welcome"><?= $this->translate('Вітаємо на сайті медичної довідки') ?></p>
             <p class="rr_instruction"><?= $this->translate('Щоб дізнатися розклад роботи лікаря Вам необхідно:') ?></p>
             <ul>
@@ -51,6 +63,7 @@
             </ul>
                 
         </div>
+        <?endif;?>
       </div>
 <!--    <select id ="hoshital_type" size="18" multiple="multiple" class = "hoshital_type_select">
        
@@ -153,7 +166,9 @@
             <?endif;?>
         </tbody>
     </table>
-    <div id ="clinicinfo" class = "clinic_info"></div>
+    <?if(!empty($this->calendar['info'][Zend_Registry::get('uds_lang').'_about'])):?>
+        <div id ="clinicinfo" class = "clinic_info"><?=$this->calendar['info'][Zend_Registry::get('uds_lang').'_about']?></div>
+    <?endif;?>
 </div>
 
 <script id="cityTemplate" type="text/x-jquery-tmpl">
@@ -192,6 +207,7 @@
         searchText: searchText,
         uds_lang: '<?=Zend_Registry::get('uds_lang')?>'
     }, function(resp){
+        history.pushState('','','?city='+cityID+'&clinic_managnent_form='+clinicTypeID+'&search_doc_spec='+searchText);
         select_option = $("#doctortypeTemplate").tmpl(JSON.parse(resp.data));
         $("#doctortype").html(select_option);
         clinClinCalendar();
@@ -203,7 +219,10 @@ function updateCalendar(clinicID, doctorTypeID){
         clinicID:clinicID,
         doctorTypeID:doctorTypeID
     }, function(resp){
-        history.pushState('','','?clinicID='+clinicID+'&doctorTypeID='+doctorTypeID);
+        cityID = $('#city').val();
+        clinicTypeID = $('#clinicType').val();
+        searchText = $('#searchinput').val();
+        history.pushState('','','?clinic='+clinicID+'&doctor_speciality='+doctorTypeID+'&city='+cityID+'&clinic_managnent_form='+clinicTypeID+'&search_doc_spec='+searchText);
         if(resp.data != '[]'){
             select_option = $("#calendarTemplate").tmpl(JSON.parse(resp.data));
             $("#calendarBody").html(select_option);

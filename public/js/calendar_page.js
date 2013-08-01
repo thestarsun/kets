@@ -42,6 +42,106 @@ function clinClinCalendar(){
     $('#clinicinfo').html('');
 }
 
+   
+function updateClinic(){
+    $.post('/default/ajax/gethospital', {
+        cityID:$('#city').val(), 
+        clinicType:$('#clinicType').val(), 
+        doctortype: $('#doctortype').val(), 
+        regionID:$('#region').val()
+        }, function(resp){
+        searchText = $('#searchinput').val();
+        history.pushState('','','?city='+$('#city').val()+'&clinic_managnent_form='+$('#clinicType').val()+'&search_doc_spec='+searchText+'&doctor_speciality='+$('#doctortype').val());
+        select_option = $("#hoshital_typeTemplate").tmpl(JSON.parse(resp.data));
+        $("#hoshital_type").html(select_option);
+        clinClinCalendar();
+    }, 'json');
+}
+    
+function getPreviousWeek(){
+    fday = $('#fday').text();
+    month = $('#month').attr('attr');
+    year = $('#year').text();
+    l = $('#l').text();
+          
+    if(fday-7<1){
+        if(month -1<1){
+            year = year -1;
+            month = 12;
+            l = IsLeapYear(year);
+        }else{
+            month = month-1;
+        }
+        if(month == 1||month ==4||month ==6||month ==9||month ==11){
+            day_in_month = 30;
+        }else if(month == 3||month == 5||month ==7||month ==8||month ==10 ||month ==12){
+            day_in_month = 31;
+        }else{
+            day_in_month = (l==0)?28:29;
+        }
+        new_fday = day_in_month +parseInt(fday)-7;
+    }else{
+        new_fday = fday-7
+    }
+    $.post('/default/ajax/calendar', {
+        day:new_fday, 
+        month:month, 
+        year:year, 
+        l:l
+    }, function(resp){
+        $('#calendar').html(resp);
+        updateCalendar(); 
+    }, 'html');
+}
+function getNextWeek(){
+    fday = $('#fday').text();
+    month = $('#month').attr('attr');
+    year = $('#year').text();
+    l = $('#l').text();
+    if(month == 1||month ==4||month ==6||month ==9||month ==11){
+        day_in_month = 30;
+    }else if(month == 3||month == 5||month ==7||month ==8||month ==10 ||month ==12){
+        day_in_month = 31;
+    }else{
+        day_in_month = (l==0)?28:29;
+    }
+    if(parseInt(fday)+7>day_in_month){
+        if(parseInt(month) +1>12){
+            year = parseInt(year) +1;
+            month = 1;
+            l = IsLeapYear(year);
+        }else{
+            month = parseInt(month)+1;
+        }
+        new_fday = parseInt(fday)+parseInt(7)-day_in_month;
+    }else{
+        new_fday = parseInt(fday)+7
+    }
+    $.post('/default/ajax/calendar', {
+        day:new_fday, 
+        month:month, 
+        year:year, 
+        l:l
+    }, function(resp){
+        $('#calendar').html(resp);
+        updateCalendar(); 
+    }, 'html');
+}
+      
+function IsLeapYear(year) {
+    if(year%4 == 0) {
+        if(year%100 == 0) {
+            if(year%400 == 0) {
+                return true;
+            }
+            else
+                return false;
+        }
+        else
+            return true;
+    }
+    return false;
+}
 //function updateCalendar(clinicID, doctorTypeID){
 //    $.post('/default/ajax/getcalendar', {
 //        clinicID:clinicID,
@@ -227,102 +327,3 @@ function html_entity_decode (string, quote_style) {
     return tmp_str;
 }
      
-
-    
-function updateClinic(){
-    $.post('/default/ajax/gethospital', {
-        cityID:$('#city').val(), 
-        clinicType:$('#clinicType').val(), 
-        doctortype: $('#doctortype').val(), 
-        regionID:$('#region').val()
-        }, function(resp){
-        select_option = $("#hoshital_typeTemplate").tmpl(JSON.parse(resp.data));
-        $("#hoshital_type").html(select_option);
-        clinClinCalendar();
-    }, 'json');
-}
-    
-function getPreviousWeek(){
-    fday = $('#fday').text();
-    month = $('#month').attr('attr');
-    year = $('#year').text();
-    l = $('#l').text();
-          
-    if(fday-7<1){
-        if(month -1<1){
-            year = year -1;
-            month = 12;
-            l = IsLeapYear(year);
-        }else{
-            month = month-1;
-        }
-        if(month == 1||month ==4||month ==6||month ==9||month ==11){
-            day_in_month = 30;
-        }else if(month == 3||month == 5||month ==7||month ==8||month ==10 ||month ==12){
-            day_in_month = 31;
-        }else{
-            day_in_month = (l==0)?28:29;
-        }
-        new_fday = day_in_month +parseInt(fday)-7;
-    }else{
-        new_fday = fday-7
-    }
-    $.post('/default/ajax/calendar', {
-        day:new_fday, 
-        month:month, 
-        year:year, 
-        l:l
-    }, function(resp){
-        $('#calendar').html(resp);
-        updateCalendar(); 
-    }, 'html');
-}
-function getNextWeek(){
-    fday = $('#fday').text();
-    month = $('#month').attr('attr');
-    year = $('#year').text();
-    l = $('#l').text();
-    if(month == 1||month ==4||month ==6||month ==9||month ==11){
-        day_in_month = 30;
-    }else if(month == 3||month == 5||month ==7||month ==8||month ==10 ||month ==12){
-        day_in_month = 31;
-    }else{
-        day_in_month = (l==0)?28:29;
-    }
-    if(parseInt(fday)+7>day_in_month){
-        if(parseInt(month) +1>12){
-            year = parseInt(year) +1;
-            month = 1;
-            l = IsLeapYear(year);
-        }else{
-            month = parseInt(month)+1;
-        }
-        new_fday = parseInt(fday)+parseInt(7)-day_in_month;
-    }else{
-        new_fday = parseInt(fday)+7
-    }
-    $.post('/default/ajax/calendar', {
-        day:new_fday, 
-        month:month, 
-        year:year, 
-        l:l
-    }, function(resp){
-        $('#calendar').html(resp);
-        updateCalendar(); 
-    }, 'html');
-}
-      
-function IsLeapYear(year) {
-    if(year%4 == 0) {
-        if(year%100 == 0) {
-            if(year%400 == 0) {
-                return true;
-            }
-            else
-                return false;
-        }
-        else
-            return true;
-    }
-    return false;
-}

@@ -162,6 +162,8 @@ class Models_QuestManager extends App_Zenddb {
         if(!empty($text))
             $select->where("t.".$lang."_name like '%".$text."%'");
         $select->group('TypeDocID');
+//        echo $select->assemble();
+//        die;
         return $this->db->fetchAll($select);
     }
     
