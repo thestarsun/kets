@@ -25,13 +25,13 @@ class IndexController extends Zend_Controller_Action {
         if ($this->getRequest()->isGET()) {
             $params = $this->_getAllParams();
             if (!empty($params['clinic']) && !empty($params['doctor_speciality'])) {
-                $data = [];
+                $data = array();
                 $data['clinicID'] = $params['clinic'];
                 $data['doctorTypeID'] = $params['doctor_speciality'];
                 $this->view->calendar = $this->qM->getcalendar($data);
             }
             if (!empty($params['city']) && !empty($params['doctor_speciality'])) {
-                $data = [];
+                $data = array();
                 $data['cityID'] = $params['city'];
                 $data['clinicType'] = $params['clinic_managnent_form'];
                 $data['doctortype'] = $params['doctor_speciality'];
