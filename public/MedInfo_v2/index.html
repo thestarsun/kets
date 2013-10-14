@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Base page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+<link  href="css/bootstrap.min.css" rel="stylesheet">
+
+<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+<!-- SOME THEMES FIX -->
+
+<!-- GOOGLE FONT-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:700italic,400,300,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+<!-- /GOOGLE FONT-->
+<style type="text/css">
+      body {
+        padding-top: 0px;
+        padding-bottom: 40px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+		font-family: 'Roboto', sans-serif;
+		
+      }
+	  
+	  h1,h2,h3,h4,h5,h6{
+		font-weight:200;
+		font-style: italic;
+	  }
+	  .navbar-inverse .navbar-inner{
+		-webkit-border-radius: 0px;
+			-moz-border-radius: 0px;
+				border-radius: 0px;
+				background:#282828;
+				border:none;
+		}
+		
+		.navbar-inner{
+			-webkit-border-radius: 0px;
+			-moz-border-radius: 0px;
+			border-radius: 0px;
+		}
+		
+		.page-header{
+			border:none;
+			padding: 10px 0px 0px;
+			margin: 0px 0 0px;
+		}
+		.brand{
+			
+			margin-left:20px;
+			font-weight:700;
+			text-decoration:none;
+		}
+		
+		.thumbnail{
+			border:none;
+			padding:0px;
+			-webkit-border-radius: 0px;
+			-moz-border-radius: 0px;
+			border-radius: 0px;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
+		
+		
+		
+	.well {
+		min-height: 20px;
+		padding: 19px;
+		margin-bottom: 20px;
+		
+		/*border: 1px solid #e3e3e3;*/
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+		border-radius: 0px;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+	
+
+	.nav-tabs > li > a {
+
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+		border-radius: 0px;
+	}
+
+	p{
+		text-align:justify;
+		margin-right:10px;
+	}
+	
+	.row-fluid.articles-grid .span6:nth-child(2n+1){
+		margin-left:0px;
+	} /* fixed bs margin when row-fluid grid*/
+	
+	.fixed-top{
+		position:fixed;
+		top:0px;
+		bottom:0px;
+		display:inline-block;
+		max-width:370px;
+		z-index:1030;
+	}
+	
+	.tab-content .tab-pane{
+		max-height:600px;
+		position:relative;
+		overflow:auto;
+	}
+
+	footer{
+		padding-top:40px;
+		margin-top:40px;
+		border-top:1px solid #dedede;
+	}
+	.related-projects{
+		padding-top:40px;
+		margin-top:40px;
+		
+	}
+	.hospital_select{
+		padding-left: 10px;
+		padding-top: 1px;
+		color: #000;
+		margin-bottom: 10px;
+		background: white;
+		text-decoration:none;
+	}
+	
+	.hospital_select a{
+		color: #000;
+		text-decoration:none;
+	}
+	.hospital_select:nth-child(odd) {
+		background-color: #fff;
+	}
+
+	.hospital_select:nth-child(even) {
+		background-color: #f5f5f5;
+	}
+	.hospital_select:hover {
+		color:#000;
+		background-color: #d6e9c6;
+		cursor: pointer;
+		text-decoration: none;
+	}
+	.hospital_select a:hover {
+		color:#000;
+		text-decoration: none;
+	}
+	
+		/*************** @media ******************/
+	@media (max-width: 940px){
+	.brand {
+		display:block;
+		text-align:center;
+		font-size:26px;
+		}
+}
+
+@media (max-width: 1200px) and (min-width: 940px){
+		.fixed-top{
+		max-width:300px;
+	}
+	
+	
+}
+
+@media (max-width: 940px) and (min-width: 768px){
+		.fixed-top{
+		max-width:225px;
+
+	}
+	
+
+
+}
+
+	
+	 
+    </style>
+
+<link href="assets/css/font-awesome.min.css" rel="stylesheet"> 
+<!-- USE PREFIX fa- e.g (<i class="fa-icon-home"></i> -->
+
+<!--[if lt IE 7]>
+	<link href="assets/css/font-awesome-ie7.min.css" rel="stylesheet">
+	<![endif]-->
+    <!-- Fav and touch icons -->
+
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+<!-- Le fav and touch icons -->
+<link rel="shortcut icon" href="assets/ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+  </head><body>
+
+   <div class="container">
+ <div class="navbar">
+      <div class="navbar-inner">
+		<a class="brand" href="#"><img src="images/logo.png" alt="Logo"></a>
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        
+          <div class="nav-collapse collapse">
+			<ul class="nav">
+              <li class="active"><a href="#">Помощь</a></li>
+              <li><a href="#">Про сервис</a></li>
+              <li><a href="#">Для клиник</a></li>
+             </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+</div>
+
+ <div class="container">
+    <!-- Example row of columns -->
+    <div class="row-fluid">
+		<!-- left SIDE-->   
+	<div class="span4"> 
+		<div id="left-side-menu"> 
+			
+		<div class="well">
+								
+			<div class="control-group">
+						<label class="span3 control-label" for="region" style="margin-left: 2.564102564102564%;">Область:</label>
+							<select id="region" class="span9" disabled="disabled">
+								<option selected="selected" value="1">Винницкая</option>
+								<option value="2">Волинська</option>
+								<option value="3">Днепропетровская</option>
+								<option value="4">Казатин</option>
+								<option value="5">Ладыжин</option>
+								<option value="6">Могилёв-Подольский</option>
+								<option value="7">Хмельник</option>
+								<option value="8">Ивано-Франковская </option>
+								<option value="9">Киевская</option>
+								<option value="10">Кировоградская</option>
+								<option value="11">Луганская</option>
+								<option value="12">Львовская</option>
+								<option value="13">Николаевская </option>
+								<option value="14">Одесская</option>
+								<option value="15">Полтавская</option>
+								<option value="16">Ровненская</option>
+								<option value="17">Сумская</option>
+								<option value="18">Тернопольская </option>
+								<option value="19">Харьковская </option>
+								<option value="20">Херсонская</option>
+								<option value="21">Хмельницкая </option>
+								<option value="22">Черкасская</option>
+								<option value="23">Черниговская </option>
+								<option value="24">Черновицкая </option>
+							</select>
+						<label class="span6 control-label" for="city">Населённый пукт:</label>
+							<select id="city" class="span6" disabled="disabled">
+								<option selected="selected" value="25">Винница</option>
+								<option value="26">Жмеринка</option>
+								<option value="27">Казатин</option>
+								<option value="28">Ладыжин</option>
+								<option value="29">Могилёв-Подольский</option>
+								<option value="30">Хмельник</option>
+							</select>
+						<label class="span6 control-label" for="clinicType">Тип заведения:</label>
+						<select id="clinicType" class="span6">
+							<option value="">Все</option>
+							<option value="1">Государственные</option>
+							<option value="2">Частные</option>
+						</select>
+			</div>		
+			<div class="left_select">
+				<input id="searchinput" type="text" placeholder="Поиск: кардиолог или сердце" class="span12" value="">
+				<select id="doctortype" size="16" class="span12">
+                             <option value="1">Акушер</option>
+                            <option value="2">Аллерголог</option>
+                            <option value="3">Андролог</option>
+                            <option value="4">Анестезиолог</option>
+                            <option value="6">Венеролог</option>
+                            <option value="7">Вертебролог</option>
+                            <option value="11">Врач УЗ-диагностики</option>
+                            <option value="12">Гастроэнтеролог</option>
+                            <option value="16">Гомеопат</option>
+                            <option value="18">Гинеколог</option>
+                            <option value="19">Дерматолог</option>
+                            <option value="20">Диетолог</option>
+                            <option value="22">Иммунолог</option>
+                            <option value="23">Кардиолог</option>
+                            <option value="30">Массажист</option>
+                            <option value="31">Маммолог</option>
+                            <option value="33">Нарколог</option>
+                            <option value="34">Невролог</option>
+                            <option value="35">Невропатолог</option>
+                            <option value="38">Нефролог</option>
+                            <option value="39">Офтальмолог</option>
+                            <option value="40">Онколог</option>
+                            <option value="43">Оториноларинголог (ЛОР)</option>
+                            <option value="45">Педиатр</option>
+                            <option value="48">Проктолог</option>
+                            <option value="53">Психотерапевт</option>
+                            <option value="54">Пульмонолог</option>
+                            <option value="57">Ревматолог</option>
+                            <option value="62">Сексопатолог</option>
+                            <option value="63">Семейный врач</option>
+                            <option value="67">Стоматолог</option>
+                            <option value="68">Сурдолог</option>
+                            <option value="70">Терапевт</option>
+                            <option value="72">Травматолог</option>
+                            <option value="78">Флеболог</option>
+                            <option value="80">Хирург</option>
+                            <option value="81">Уролог</option>
+                            <option value="82">Эндокринолог (специалист по гормонам)</option>
+                            <option value="83">Эндоскопист</option>
+                            <option value="87">test</option>
+                         </select>
+			</div>
+          
+         
+		</div><!-- /well--> 
+		</div>      
+    </div>
+	<!-- /left SIDE--> 
+
+		
+		<!-- CONTENT SIDE-->
+		<div class="span8">
+			<!-- INNER ROW-->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="rr_welcome_text">
+							<h3>Приветствуем на сайте медецинской помощи</h3>
+							<img src="images/doctor.jpg" alt="doctor" class="pull-right img-circle">
+							<p class="rr_instruction">Для того чтоб узнать расписание работы врача необходимо</p>
+							<ul>
+								<li>Ввести в поиск специальность врача или название органа на лечении которого специализируеться врач</li>
+								<li>Выбрать специальность врача</li>
+								<li>Выбрать больницу которая Вас интерисует</li>
+								<li>Рассписание врачей выбранной Вами специальности и больницы будет обображаться внизу страницы.</li>
+							</ul>
+						</div>
+						<p class="center">
+							<button class="btn btn-success" type="button">Войти</button>
+							<button class="btn" type="button">Зарегистрироваться</button>
+						</p>
+						<div style="clear:both;"></div>
+						<div class="clinics_list">
+							<div class="hospital_select" paramid="36" style="background-color: #fcf8e3;">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36" style="background-color: #fcf8e3;">
+								<a href="#">
+								<h4 class="clinicName">  "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36" style="background-color: #fcf8e3;">
+								<a href="#">
+								<h4 class="clinicName">  "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							<div class="hospital_select" paramid="36">
+								<a href="#">
+								<h4 class="clinicName"> "ВинАльфа-Мед"  Медицинский центр </h4>                  
+								<strong class="clinicTypeText">Частные</strong> &nbsp;&nbsp;&nbsp;         
+								<span class="textDescribe">ул.Малиновского,26 , 2 этаж</span>&nbsp;&nbsp;&nbsp;
+								<span>57-53-90,57-30-90,067-443-03-83</span>
+								</a>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				
+				
+			
+
+<!-- FOOTER-->
+<footer class="row-fluid">
+      <div class="span3">
+        <h4 class="line3 center standart-h4title"><span>Язык</span></h4>
+        <ul class="footer-links">
+          <li><a href="#">Русский</a></li>
+          <li><a href="#">Українська</a></li> 
+        </ul>
+      </div>
+	  
+    <div class="span3">
+        <h4 class="line3 center standart-h4title"><span>Меню</span></h4>
+        <ul class="footer-links">
+          <li><a href="#">Помошь</a></li>
+          <li><a href="#">Про проект</a></li>
+          <li><a href="#">Для клиник</a></li>
+        </ul>
+    </div> 
+	  
+	<div class="span3">
+    </div>
+	
+    <div class="span3">
+        <h4 class="line3 center standart-h4title"><span>Наши контакты</span></h4>
+		<address>
+			<strong>MedInfo.in.ua</strong><br>
+			<i class="fa-icon-map-marker"></i> г. Винница<br>
+			21007<br>
+			<i class="fa-icon-phone-sign"></i> + 380 (432) 13-13-666
+		
+		</address>
+    </div>
+  
+<div class="span12">
+	<hr>
+        <p>© MedInfo.in.ua 2013</p>
+</div>
+	  
+</footer>
+
+</div>
+<!-- /CONTENT SIDE-->
+   
+
+
+
+</div>
+
+ 
+
+ 
+</div> <!-- /container -->
+<!--/ CONTENT -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap-transition.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-alert.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-modal.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-dropdown.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-scrollspy.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-tab.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-tooltip.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-popover.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-button.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-collapse.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-carousel.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-typeahead.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-affix.js" type="text/javascript"></script>
+<script src="assets/js/jquery.localscroll-1.2.7-min.js" type="text/javascript"></script>
+<script src="assets/js/jquery.scrollTo-1.4.2-min.js" type="text/javascript"></script>
+<script src="assets/js/jquery.mousewheel.js" type="text/javascript"></script>
+<script src="assets/js/jquery.mCustomScrollbar.js" type="text/javascript"></script>
+
+<!-- STYLE SWITCHER-->
+
+<script>
+		var nav = jQuery('#left-side-menu');
+		jQuery(window).scroll(function () {
+				if (jQuery(this).scrollTop() > 197) {
+					nav.addClass("fixed-top");	
+				} else {
+					nav.removeClass("fixed-top");	
+				}
+			});
+</script>
+
+
+
+
+<!--<script>
+    (function($){
+        $(window).load(function(){
+            $(".tab-pane").mCustomScrollbar();  
+
+
+        });
+    })(jQuery);
+</script>-->
+
+
+</body></html>
