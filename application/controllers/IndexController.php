@@ -54,6 +54,14 @@ class IndexController extends Zend_Controller_Action {
     public function aboutserviceAction() {
         $this->view->staticData = $this->qM->getPage('about_service', Zend_Registry::get('uds_lang'));
     }
+    
+    public function calendarAction(){
+//        $this->_helper->layout()->disableLayout();
+//        $this->_helper->viewRenderer->setNoRender(true);
+        $this->view->calendar = $this->qM->getcalendar($this->_getAllParams());
+        $a = Zend_Registry::get('uds_lang');;
+        $this->view->lang = strtoupper($a);
+    }
 
 }
 

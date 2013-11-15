@@ -1,14 +1,16 @@
-
-
+<footer>
+    <nav class="bottomNav">
+        <ul>
+            <li class="f_d_li"><a href="" ><?= $this->translate('Help') ?></a></li>
+            <li><a href="" ><?= $this->translate('About service') ?></a></li>
+            <li><a href="" ><?= $this->translate('For clinics') ?></a></li>
+        </ul>
+    </nav>
+    <div class="copyright">
+        Copyright 2013 Medinfo.in.ua
+    </div>
+</footer>
 <script type="text/javascript">
-var nav = jQuery('#left-side-menu');
-jQuery(window).scroll(function () {
-    if (jQuery(this).scrollTop() > 197) {
-            nav.addClass("fixed-top");	
-    } else {
-            nav.removeClass("fixed-top");	
-    }
-});
 //---> Yandex.Metrika counter
 (function (d, w, c) {
     (w[c] = w[c] || []).push(function() {

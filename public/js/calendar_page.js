@@ -21,16 +21,16 @@ $(document).ready(function(){
     $('#doctortype').change(function(){
         updateClinic();
     });
-    $('.hospital_select').live('click',function(){
-        $('.hospital_select').each(function(i){
-           if(i%2 != 0)
-                $(this).attr('style', 'background: rgb(248, 234, 226);');
-            else
-                $(this).attr('style', 'background: white;');
-        });
-        $(this).attr('style', 'background: rgb(216, 215, 215);');
-        updateCalendar($(this).attr('paramID'),$('#doctortype').val()); 
-    });
+//    $(document).on('click','.hospital_select',function(){
+//        $('.hospital_select').each(function(i){
+//           if(i%2 != 0)
+//                $(this).attr('style', 'background: rgb(248, 234, 226);');
+//            else
+//                $(this).attr('style', 'background: white;');
+//        });
+//        $(this).attr('style', 'background: rgb(216, 215, 215);');
+//        updateCalendar($(this).attr('paramID'),$('#doctortype').val()); 
+//    });
 })
 function clinClinic(){
     $("#hoshital_type").html('');
@@ -53,6 +53,7 @@ function updateClinic(){
         searchText = $('#searchinput').val();
         history.pushState('','','?city='+$('#city').val()+'&clinic_managnent_form='+$('#clinicType').val()+'&search_doc_spec='+searchText+'&doctor_speciality='+$('#doctortype').val());
         select_option = $("#hoshital_typeTemplate").tmpl(JSON.parse(resp.data));
+        console.log(select_option);
         $("#hoshital_type").html(select_option);
         clinClinCalendar();
     }, 'json');
@@ -326,4 +327,3 @@ function html_entity_decode (string, quote_style) {
 
     return tmp_str;
 }
-     

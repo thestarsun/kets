@@ -5,15 +5,13 @@
         <?php echo $this->partial("head.phtml"); ?>
     </head>
     <body>
-        <div id="wraper">
-            <section>
                 <?php echo $this->render("header.phtml"); ?>
-                    <div id="content">
+        <div class="container">
+    <!-- Example row of columns -->
+    <div class="row-fluid">
                         <?php echo $this->layout()->content; ?>
-                    </div>
-            </section>
-            <?php echo $this->partial("footer.phtml"); ?>
-        </div>
+        </div></div>
+            <?php  echo $this->partial("footer.phtml"); ?>
     </body>
 
 </html>

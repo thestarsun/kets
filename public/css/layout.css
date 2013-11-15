@@ -1,0 +1,190 @@
+body {
+    padding-top: 0px;
+    padding-bottom: 40px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-family: 'Roboto', sans-serif !important;
+
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight:200 !important;
+    font-style: italic;
+}
+.navbar-inverse .navbar-inner{
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    background:#282828;
+    border:none;
+}
+
+.navbar-inner{
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.page-header{
+    border:none;
+    padding: 10px 0px 0px;
+    margin: 0px 0 0px;
+}
+.brand{
+
+    margin-left:20px;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.thumbnail{
+    border:none;
+    padding:0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+.well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+
+    /*border: 1px solid #e3e3e3;*/
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+
+.nav-tabs > li > a {
+
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+p{
+    text-align:justify;
+    margin-right:10px;
+}
+
+.row-fluid.articles-grid .span6:nth-child(2n+1){
+    margin-left:0px;
+} /* fixed bs margin when row-fluid grid*/
+
+.fixed-top{
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    display:inline-block;
+    max-width:370px;
+    z-index:1030;
+}
+
+.tab-content .tab-pane{
+    max-height:600px;
+    position:relative;
+    overflow:auto;
+}
+
+footer{
+    padding-top:40px;
+    margin-top:40px;
+    border-top:1px solid #dedede;
+}
+.related-projects{
+    padding-top:40px;
+    margin-top:40px;
+
+}
+.hospital_select{
+    padding-left: 10px;
+    padding-top: 1px;
+    color: #000;
+    margin-bottom: 10px;
+    background: white;
+    text-decoration:none;
+}
+
+.hospital_select a{
+    color: #000;
+    text-decoration:none;
+}
+.hospital_select:nth-child(odd) {
+    background-color: #fff;
+}
+
+.hospital_select:nth-child(even) {
+    background-color: #f5f5f5;
+}
+.hospital_select:hover {
+    color:#000;
+    background-color: #d6e9c6;
+    cursor: pointer;
+    text-decoration: none;
+}
+.hospital_select a:hover {
+    color:#000;
+    text-decoration: none;
+}
+
+/*************** @media ******************/
+@media (max-width: 940px){
+    .brand {
+        display:block;
+        text-align:center;
+        font-size:26px;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 940px){
+    .fixed-top{
+        max-width:300px;
+    }
+
+
+}
+
+@media (max-width: 940px) and (min-width: 768px){
+    .fixed-top{
+        max-width:225px;
+
+    }
+
+
+
+
+}
+.form-signin {
+    max-width: 346px;
+    padding: 19px 29px 29px;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 7px 9px;
+}

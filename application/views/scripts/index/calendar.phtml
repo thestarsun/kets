@@ -1,0 +1,58 @@
+<!--<pre>
+<?//print_r($this->calendar['info'])?>
+</pre>-->
+<div class="row-fluid">
+		<!-- left SIDE-->   
+	<div class="span12"> 
+	<h3><?if(!empty($this->calendar['info']['ClinicName'.$this->lang])):?>
+            <?=$this->calendar['info']['ClinicName'.$this->lang]?><?endif?></h3>
+	<div class="span5">
+	<div class="well">	
+		<address>
+			<strong><?if(!empty($this->calendar['info']['ClinicName'.$this->lang])):?>
+            <?=$this->calendar['info']['ClinicName'.$this->lang]?><?endif?></strong><br>
+			<?if(!empty($this->calendar['info']['ClinicStreet'.$this->lang])):?>
+                                                <?=$this->calendar['info']['ClinicStreet'.$this->lang]?><?endif?><br>
+			San Francisco, CA 94107<br>
+			<abbr title="Phone">P:</abbr> <?if(!empty($this->calendar['info']['ClinicTel'])):?>
+                                                <?=$this->calendar['info']['ClinicTel']?><?endif?>
+			<a href="mailto:#">first.last@gmail.com</a>
+		</address>
+	</div>
+ </div>
+ </div>
+ <div class="span12"> 
+
+	<h4>Расписание работы врача: <strong>Акушер</strong></h4> 
+	<table class="table table-hover">
+        <thead>
+            <tr><th></th>
+            <th><span></span><span >Понедельник</span></th>
+                        <th><span >Вторник</span> </th>
+            <th><span >Среда</span> </th>
+            <th><span >Четверг</span> </th>
+            <th><span >Пятница</span> </th>
+            <th><span >Суббота</span></th>
+            <th><span >Воскресенье</span> </th>
+        </tr></thead>
+        <tbody id="calendarBody">
+            <tr> 
+                <?if(!empty($this->calendar['schedule'])):?>
+                    <?foreach($this->calendar['schedule'] as $row):?>
+                        <td><?=$row['DocName'+$this->lang]?></td>          
+                        <td><?=$row['Monday']?></td>          
+                        <td><?=$row['Tuesday']?></td>          
+                        <td><?=$row['Wednesday']?></td>          
+                        <td><?=$row['Thursday']?></td>          
+                        <td><?=$row['Friday']?></td>          
+                        <td><?=$row['Saturday']?></td>          
+                        <td><?=$row['Sunday']?></td>          
+                    <?endforeach;?>
+                <?endif;?>
+            </tr>
+        </tbody>
+    </table>
+	
+</div>
+
+                

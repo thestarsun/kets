@@ -193,7 +193,7 @@ class Models_QuestManager extends App_Zenddb {
         
         $res =$this->db->fetchAll($select);
         if(!empty($params['clinicID'])) 
-            $select1 = $this->db->select()->from(array('t' => 'vw_clinic_list'),array('ua_about', 'ru_about'))->where('t.ClinicID =?',$params['clinicID']);
+            $select1 = $this->db->select()->from(array('t' => 'vw_clinic_list'),array('*'))->where('t.ClinicID =?',$params['clinicID']);
         $info =$this->db->fetchRow($select1);
         
         foreach($res as &$r){

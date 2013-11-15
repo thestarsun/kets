@@ -1,56 +1,38 @@
-<?$lang = explode('/', $_SERVER['REQUEST_URI']); $lang= $lang[1];?> 
-<link rel="stylesheet" type="text/css" href="/css/med_login.css"/>
-<div class="loginContent">
-    <div class="leftLogin">
-        <div>
-            <?= $this->translate('Portal work on test mode') ?>
+<? $lang = explode('/', $_SERVER['REQUEST_URI']);
+$lang = $lang[1]; ?> 
+
+<!--<link rel="stylesheet" type="text/css" href="/css/med_login.css"/>-->
+
+    <form id="LoginForm" action ="<?= $this->url(array(), 'login') ?>" class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" class="input-block-level" placeholder="<?= $this->translate('Login') ?>" id="username" name="username">
+        <input type="password" class="input-block-level" placeholder="<?= $this->translate('Password') ?>" id="password" name="password">
+        <div style ="color: #CA3D26; margin-bottom: 10px;">
+                <?= $this->errMessage ?>
         </div>
-    </div>
-    <div class="rightLogin">
-        <div id ="loginFormBox" class="loginFormBox">
-                <div  class="loginForm">
-                    <form id="LoginForm" action ="<?=$this->url(array(),'login')?>" method="post">
-                        <div>
-                            
-                        </div>
-                        <label for="username"><span><?= $this->translate('Login') ?></span></label>
-                        <input id="username" name="username" type="text" />
-                        <label for="password"><span><?= $this->translate('Password') ?></span></label>
-                        <input id="password" name="password" type="password"/>
-                        <div class="r">
-                            <div class="regBtn ">
-                                <a href="javascript:void(0)" id ="loginLink"><?= $this->translate('Enter') ?></a>
-                            </div>
-                            <div class="regLine"><a href="<?=$this->url(array('lang'=>$lang),'registration')?>"> <!--onclick ="registPopup()"--><?= $this->translate('Signup') ?></a></div>
-                            <div class="regLine"><a href="<?=$this->url(array('lang'=>$lang),'restorepass')?>"><?= $this->translate('Restore password') ?></a></div>
-                        </div>
-                    </form>
-                </div>
-        </div>
-        <div style ="color: #CA3D26;
-    margin: 20px;
-    padding: 10px;">
-            <?=$this->errMessage?>
-        </div>
-    </div>
-</div>
- <div id="result"></div>
+        <a href="<?= $this->url(array('lang' => $lang), 'registration') ?>" class="btn " type="submit"><?= $this->translate('Signup') ?></a>
+        <a href="<?= $this->url(array('lang' => $lang), 'restorepass') ?>" class="btn " type="submit"><?= $this->translate('Restore password') ?></a>
+        <a ref="javascript:void(0)" id ="loginLink" class="btn btn-success" type="submit"><?= $this->translate('Enter') ?></a>
+    </form>
+
+<div id="result"></div>
+    
 <script>
     function registPopup() {
         $.ajax({
-                        url: "/default/registration/form",
-                        metod:"post",
-                        success: function(data){
-                                    $("#result").html(data);
-                        }
-                    });
+            url: "/default/registration/form",
+            metod: "post",
+            success: function(data) {
+                $("#result").html(data);
+            }
+        });
     }
-    $(document).ready(function(){
-        $('#loginLink').click(function(){
+    $(document).ready(function() {
+        $('#loginLink').click(function() {
             $('#LoginForm').submit();
         });
-        $('form').keydown(function(event){
-            if(event.keyCode == 13)
+        $('form').keydown(function(event) {
+            if (event.keyCode == 13)
                 $('#LoginForm').submit();
         })
     })

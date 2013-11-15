@@ -1,176 +1,140 @@
-<link rel="stylesheet" type="text/css" href="/css/calendar.css" media="screen" />
-<script src="/js/calendar_page.js?token=<?=date('YmdH')?>"></script>
-<div class = "top_inputs">
-        <?=$this->translate('Region')?>: 
-            <select id="region" class = "search_right" disabled ="disabled">
-                 <option value=""></option>
-                 <?if(!empty($this->regions)):?>
-                    <?foreach($this->regions as $regionId => $regionName):?>
-                        <option <?if($regionId == 1):?>selected="selected"<?endif;?>value="<?=$regionId?>"><?=$regionName?></option>
-                    <?endforeach;?>
-                <?endif;?>
-            </select>
-        <?=$this->translate('Nasel punkt')?>:
-            <select id="city" class = "search_right" disabled ="disabled">
-                <option value=""></option>
-                 <?if(!empty($this->city)):?>
-                    <?foreach($this->city as $cityId => $cityName):?>
-                        <option <?if($cityId == 25):?>selected="selected"<?endif;?>value="<?=$cityId?>"><?=$cityName?></option>
-                    <?endforeach;?>
-                <?endif;?>
-            </select>
-        <?=$this->translate('Type of state')?>:
-        <select id="clinicType"class = "search_right">
-            <option value=""><?=$this->translate('All')?></option>
-            <?if(!empty($this->clinicType)):?>
-            <?foreach($this->clinicType as $clinicType):?>
-                <option value="<?=$clinicType['idtbl_clinic_type']?>" <?if($clinicType['idtbl_clinic_type'] == $this->clinic_managnent_form):?>selected="selected"<?endif;?>><?=$clinicType[$this->lang.'_name']?></option>
-            <?endforeach;?>
-            <?endif;?>
-        </select>
-    </div>    
-<div class = "left_select">
-    <input id="searchinput" type="text" placeholder="<?= $this->translate('Пошук: кардіолог або серце') ?>" class = "search" value="<?=$this->search_doctor_speciality?>">
-    <select id="doctortype" size="16"  class = "doc_type_select">
-        <?if(!empty($this->doctorType)):?>
-            <?foreach($this->doctorType as $doctorType):?>
-                <option value="<?=$doctorType['TypeDocID']?>" <?if($doctorType['TypeDocID'] == $this->doctor_speciality):?>selected="selected"<?endif;?>><?=$doctorType[$this->lang.'_name']?></option>
-            <?endforeach;?>
-         <?endif;?>
-    </select>
-</div>
-<div class = "center_select">
-    <div id ="hoshital_type" class = "hoshital_type_select" style="overflow-x: hidden;">
-        <?if(!empty($this->hospitals)):?>
-            <?foreach($this->hospitals as $hospital):?>
-                <div class = "hospital_select" paramID="<?=$hospital['ClinicID']?>">
-                    <span class = "clinicName">
-                        <?=$hospital['ClinicName'.strtoupper($this->lang)]?>
-                    </span>
-                    <br>
-                    <span class = "clinicTypeText"><?=$hospital['ClinicType'.strtoupper($this->lang)]?></span> &nbsp;&nbsp;&nbsp;
-                    <span class = "textDescribe"><?=$hospital['ClinicStreet'.strtoupper($this->lang)]?>&nbsp;&nbsp;&nbsp;<?=$hospital['ClinicTel']?></span>
-                </div>
-            <?endforeach;?>
-        <?else:?>
-        <div class="rr_welcome_text"><p class="rr_welcome"><?= $this->translate('Вітаємо на сайті медичної довідки') ?></p>
-            <p class="rr_instruction"><?= $this->translate('Щоб дізнатися розклад роботи лікаря Вам необхідно:') ?></p>
-            <ul>
-                <li><?= $this->translate('Ввести в пошук спеціальність лікаря, або назву орану, на якому спеціалізується лікар;') ?></li>
-                <li><?= $this->translate('Обрати спеціальність лікаря;') ?></li>
-                <li><?= $this->translate('Обрати лікарню, що Вас цікавить;') ?></li>
-                <li><?= $this->translate('Розклад лікарів обраної Вами спеціальності та лікарні буде відображено внизу сторінки.') ?></li>
-            </ul>
-                
-        </div>
-        <?endif;?>
-      </div>
-<!--    <select id ="hoshital_type" size="18" multiple="multiple" class = "hoshital_type_select">
-       
-    </select>-->
-</div>
-<div class = "clear"></div>
-<div id="calendar" <?if(empty($this->calendar)):?>style="display: none<?endif;?>">
-    <div class = "calendarHead">
-<!--        <div id ="l" style="display: none"><?//=$this->L?></div>
-        <div class = "listweek" style="float: left;"><a onclick ="getPreviousWeek()">Previous week</a></div>
-        <div class = "listmonth" >
-            <span id='month'  attr="<?//=$this->monthNumber?>"><?//=$this->month?></span>
-            <span id='year'><?//=$this->year?></span>
-        </div>
-        <div class = "listweek" style="float: left;"><a onclick ="getNextWeek()">Next week</a></div>
-        <div style="clear:both"></div>-->
-    </div>
-    <table >
-        <thead>
-            <th></th>
-            <th><span id='fday'><?//=$this->week_start?></span><span class = "week_day"><?=$this->translate('Monday')?></span></th>
-            <?$now =  strtotime($this->week_start.' '.$this->month.' '.$this->year)?>
-            <th><?//=date('j', strtotime("+1 day", $now))?><span class = "week_day"><?=$this->translate('Thursday')?></span> </th>
-            <th><?//=date('j', strtotime("+2 day", $now))?><span class = "week_day"><?=$this->translate('Wednesday')?></span> </th>
-            <th><?//=date('j', strtotime("+3 day", $now))?><span class = "week_day"><?=$this->translate('Tuesday')?></span> </th>
-            <th><?//=date('j', strtotime("+4 day", $now))?><span class = "week_day"><?=$this->translate('Friday')?></span> </th>
-            <th><?//=date('j', strtotime("+5 day", $now))?><span class = "week_day"><?=$this->translate('Saturday')?></span></th>
-            <th><?//=date('j', strtotime("+6 day", $now))?><span class = "week_day"><?=$this->translate('Sunday')?></span> </th>
-        </thead>
-        <tbody id="calendarBody">
-            <?if(!empty($this->calendar["schedule"])):?>
-            <?foreach($this->calendar["schedule"] as $oneRow):?>
-            <tr class = "htmlspechchars">
-                <td><?=$oneRow['DocName'.strtoupper($this->lang)];?></td> 
-                <td>
-                    <?if($oneRow['Monday_type'] == 0):?>
-                        <?=$oneRow['Monday']?>
-                    <?elseif($oneRow['Monday_type']== 1):?>
-                        <?=$oneRow['Monday_info_'.$this->lang]?>
-                    <?else:?>
-                        <img class = "small_img" src="<?=$oneRow['Monday_url'];?>">
-                    <?endif;?>
-                </td> 
-                <td>
-                    <?if($oneRow['Tuesday_type'] == 0):?>
-                        <?=$oneRow['Tuesday']?>
-                    <?elseif($oneRow['Tuesday_type']== 1):?>
-                        <?=$oneRow['Tuesday_info_'.$this->lang]?>
-                    <?else:?>
-                        <img class = "small_img" src="<?=$oneRow['Tuesday_url'];?>">
-                    <?endif;?>
-                </td> 
-                <td>
-                    <?if($oneRow['Wednesday_type'] == 0):?>
-                        <?=$oneRow['Wednesday']?>
-                    <?elseif($oneRow['Wednesday_type']== 1):?>
-                        <?=$oneRow['Wednesday_info_'.$this->lang]?>
-                    <?else:?>
-                        <img class = "small_img" src="<?=$oneRow['Wednesday_url'];?>">
-                    <?endif;?>
-                </td> 
-                <td>
-                    <?if($oneRow['Thursday_type'] == 0):?>
-                        <?=$oneRow['Thursday']?>
-                    <?elseif($oneRow['Thursday_type']== 1):?>
-                        <?=$oneRow['Thursday_info_'.$this->lang]?>
-                    <?else:?>
-                        <img class = "small_img" src="<?=$oneRow['Thursday_url'];?>">
-                    <?endif;?>
-                </td> 
-                <td>
-                    <?if($oneRow['Friday_type'] == 0):?>
-                        <?=$oneRow['Friday']?>
-                    <?elseif($oneRow['Friday_type']== 1):?>
-                        <?=$oneRow['Friday_info_'.$this->lang]?>
-                    <?else:?>
-                        <img class = "small_img" src="<?=$oneRow['Friday_url'];?>">
-                    <?endif;?>
-                </td> 
-                <td>
-                    <?if($oneRow['Saturday_type'] == 0):?>
-                        <?=$oneRow['Saturday']?>
-                    <?elseif($oneRow['Saturday_type']== 1):?>
-                        <?=$oneRow['Saturday_info_'.$this->lang]?>
-                    <?else:?>
-                        <img class = "small_img" src="<?=$oneRow['Saturday_url'];?>">
-                    <?endif;?>
-                </td> 
-                <td>
-                    <?if($oneRow['Sunday_type'] == 0):?>
-                        <?=$oneRow['Sunday']?>
-                    <?elseif($oneRow['Sunday_type']== 1):?>
-                        <?=$oneRow['Sunday_info_'.$this->lang]?>
-                    <?else:?>
-                        <img class = "small_img" src="<?=$oneRow['Sunday_url'];?>">
-                    <?endif;?>
-                </td> 
-            </tr>
-            <?endforeach;?>
-            <?endif;?>
-        </tbody>
-    </table>
-    <?if(!empty($this->calendar['info'][Zend_Registry::get('uds_lang').'_about'])):?>
-        <div id ="clinicinfo" class = "clinic_info"><?=$this->calendar['info'][Zend_Registry::get('uds_lang').'_about']?></div>
-    <?endif;?>
-</div>
+<!--<link rel="stylesheet" type="text/css" href="/css/calendar.css" media="screen" />-->
+<?$lang = explode('/', $_SERVER['REQUEST_URI']); $lang= $lang[1];?>
+<div class="span4"> 
+    <div id="left-side-menu"> 
+        <div class="well">
+            <div class="control-group">
+                <label class="span3 control-label" for="region" style="margin-left: 2.564102564102564%;"><?= $this->translate('Region') ?>: </label>
+                <select id="region" class="span9" disabled="disabled">
+                    <option value=""></option>
+                    <? if (!empty($this->regions)): ?>
+                        <? foreach ($this->regions as $regionId => $regionName): ?>
+                            <option <? if ($regionId == 1): ?>selected="selected"<? endif; ?>value="<?= $regionId ?>"><?= $regionName ?></option>
+                        <? endforeach; ?>
+                    <? endif; ?>
+                </select>
+                <label class="span6 control-label" for="city"><?= $this->translate('Nasel punkt') ?>:</label>
+                <select id="city" class="span6" disabled="disabled">
+                    <option value=""></option>
+                    <? if (!empty($this->city)): ?>
+                        <? foreach ($this->city as $cityId => $cityName): ?>
+                            <option <? if ($cityId == 25): ?>selected="selected"<? endif; ?>value="<?= $cityId ?>"><?= $cityName ?></option>
+                        <? endforeach; ?>
+                    <? endif; ?>
+                </select>
+                <label class="span6 control-label" for="clinicType"><?= $this->translate('Type of state') ?>:</label>
+                <select id="clinicType" class="span6">
+                    <option value=""><?= $this->translate('All') ?></option>
+                    <? if (!empty($this->clinicType)): ?>
+                        <? foreach ($this->clinicType as $clinicType): ?>
+                            <option value="<?= $clinicType['idtbl_clinic_type'] ?>" <? if ($clinicType['idtbl_clinic_type'] == $this->clinic_managnent_form): ?>selected="selected"<? endif; ?>><?= $clinicType[$this->lang . '_name'] ?></option>
+                        <? endforeach; ?>
+                    <? endif; ?>
+                </select>
+            </div>		
+            <div class="left_select"> 
+                <input id="searchinput" type="text" placeholder="<?= $this->translate('Пошук: кардіолог або серце') ?>" class="span12" value="<?= $this->search_doctor_speciality ?>">
+                <select id="doctortype" size="16"  class = "span12">
+                    <? if (!empty($this->doctorType)): ?>
+                        <? foreach ($this->doctorType as $doctorType): ?>
+                            <option value="<?= $doctorType['TypeDocID'] ?>" <? if ($doctorType['TypeDocID'] == $this->doctor_speciality): ?>selected="selected"<? endif; ?>><?= $doctorType[$this->lang . '_name'] ?></option>
+                        <? endforeach; ?>
+                    <? endif; ?>
+                </select>
 
+            </div>
+
+
+        </div> 
+        <!--/well--> 
+    </div>      
+</div>
+	 <!--/left SIDE--> 
+
+		
+		 <!--CONTENT SIDE-->
+		<div class="span8">
+			 <!--INNER ROW-->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="rr_welcome_text">
+							<h3><?= $this->translate('Вітаємо на сайті медичної довідки') ?></h3>
+                <img src="/image/doctor_1.jpg" alt="doctor" class="pull-right img-circle">
+                <p class="rr_instruction"><?= $this->translate('Щоб дізнатися розклад роботи лікаря Вам необхідно:') ?></p>
+                <ul>
+                    <li><?= $this->translate('Ввести в пошук спеціальність лікаря, або назву орану, на якому спеціалізується лікар;') ?></li>
+                    <li><?= $this->translate('Обрати спеціальність лікаря;') ?></li>
+                    <li><?= $this->translate('Обрати лікарню, що Вас цікавить;') ?></li>
+                    <li><?= $this->translate('Розклад лікарів обраної Вами спеціальності та лікарні буде відображено внизу сторінки.') ?></li>
+                </ul>
+						</div>
+						<p class="center">
+							<a class="btn btn-success" href="<?= $this->url(array('lang'=>$lang), 'login', true)?>" >Войти</a>
+							<a class="btn " href="<?= $this->url(array('lang'=>$lang), 'registration', true)?>" >Зарегистрироваться</a>
+						</p>
+						<div style="clear:both;"></div>
+						<div  id ="hoshital_type"  class="clinics_list">
+							<? if (!empty($this->hospitals)): ?>
+                                                            <? foreach ($this->hospitals as $hospital): ?>
+                                                                <div class = "hospital_select" paramID="<?= $hospital['ClinicID'] ?>" onclick="getCalendar(<?= $hospital['ClinicID'] ?>, $('#doctortype').val()) >
+                                                                    <a href="#">
+                                                                        <h4 class="clinicName"> <?= $hospital['ClinicName' . strtoupper($this->lang)] ?> </h4>                  
+                                                                        <strong class="clinicTypeText"><?= $hospital['ClinicType' . strtoupper($this->lang)] ?></strong> &nbsp;&nbsp;&nbsp;         
+                                                                        <span class="textDescribe"><?= $hospital['ClinicStreet' . strtoupper($this->lang)] ?></span>&nbsp;&nbsp;&nbsp;
+                                                                        <span><?= $hospital['ClinicTel'] ?></span>
+                                                                    </a>
+                                                                </div>
+                                                            <? endforeach; ?>
+                                                        <? endif; ?>
+							
+						</div>
+					</div>
+				</div>
+				
+				
+			
+
+ <!--FOOTER-->
+<footer class="row-fluid">
+      <div class="span3">
+        <h4 class="line3 center standart-h4title"><span>Язык</span></h4>
+        <ul class="footer-links">
+            <li><a href="/uk/<?=substr($_SERVER['REQUEST_URI'], 4)?>" >Украинский</a></li>
+            <li><a href="/ru/<?=substr($_SERVER['REQUEST_URI'], 4)?>" >Русский</a></li>
+        </ul>
+      </div>
+	  
+    <div class="span3">
+        <h4 class="line3 center standart-h4title"><span>Меню</span></h4>
+        <ul class="footer-links">
+          <li><a href="<?= $this->url(array('lang'=>$lang), 'base', true)?>" ><?= $this->translate('Help') ?></a></li>
+            <li><a href="<?= $this->url(array('lang'=>$lang), 'aboutservice', true)?>" ><?= $this->translate('About service') ?></a></li>
+            <li><a href="<?= $this->url(array('lang'=>$lang), 'forclinics', true)?>" ><?= $this->translate('For clinics') ?></a></li>
+        </ul>
+    </div> 
+	  
+	<div class="span3">
+    </div>
+	
+    <div class="span3">
+        <h4 class="line3 center standart-h4title"><span>Наши контакты</span></h4>
+		<address>
+			<strong>MedInfo.in.ua</strong><br>
+			<i class="fa-icon-map-marker"></i> г. Винница<br>
+			21007<br>
+			<i class="fa-icon-phone-sign"></i> + 380 (432) 13-13-666
+		
+		</address>
+    </div>
+  
+<div class="span12">
+	<hr>
+        <p>© MedInfo.in.ua 2013</p>
+</div>
+	  
+</footer>
+
+</div><!--CONTENT SIDE-->
 <script id="cityTemplate" type="text/x-jquery-tmpl">
       <option value="${idtbl_city}">${<?=$this->lang?>.'_name}</option>
 </script>
@@ -178,14 +142,14 @@
       <option value="${TypeDocID}">${<?=$this->lang?>_name}</option>
 </script>
 <script id="hoshital_typeTemplate" type="text/x-jquery-tmpl">
-    <div class = "hospital_select" paramID="${ClinicID}">
-        <span class = "clinicName">
-            ${ClinicName<?=strtoupper($this->lang)?>}
-        </span>
-        <br>
-        <span class = "clinicTypeText">${ClinicType<?=strtoupper($this->lang)?>}</span> &nbsp;&nbsp;&nbsp;
-        <span class = "textDescribe">${ClinicStreet<?=strtoupper($this->lang)?>}&nbsp;&nbsp;&nbsp;${ClinicTel}</span>
-    </div>
+        <div class = "hospital_select" paramID="${ClinicID}" onclick="getCalendar(${ClinicID}, $('#doctortype').val())" >
+            <a href="javascript:void(0)">
+                <h4 class="clinicName"> ${ClinicName<?=strtoupper($this->lang)?>} </h4>                  
+                <strong class="clinicTypeText">${ClinicType<?=strtoupper($this->lang)?>}</strong> &nbsp;&nbsp;&nbsp;         
+                <span class="textDescribe">${ClinicStreet<?=strtoupper($this->lang)?>}</span>&nbsp;&nbsp;&nbsp;
+                <span>${ClinicTel}</span>
+            </a>
+        </div>
 </script>
 <script id="calendarTemplate" type="text/x-jquery-tmpl">
     <tr class = "htmlspechchars">
@@ -199,42 +163,56 @@
         <td>{{if Sunday_type == 0}}${Sunday}{{else}}{{if Sunday_type == 1}}${Sunday_info_<?=$this->lang?>}{{else}}<img class = "small_img" src="${Sunday_url}">{{/if}}{{/if}}</td> 
     </tr>
 </script>
-<script>
-    function updateDoctorType(cityID, clinicTypeID, searchText){
-    $.post('/default/ajax/getdoctorstypeforcity', {
-        cityID:cityID, 
-        clinicType:clinicTypeID , 
-        searchText: searchText,
-        uds_lang: '<?=Zend_Registry::get('uds_lang')?>'
-    }, function(resp){
-        history.pushState('','','?city='+cityID+'&clinic_managnent_form='+clinicTypeID+'&search_doc_spec='+searchText);
-        select_option = $("#doctortypeTemplate").tmpl(JSON.parse(resp.data));
-        $("#doctortype").html(select_option);
-        clinClinCalendar();
-        clinClinic();
-    }, 'json');
-}
-function updateCalendar(clinicID, doctorTypeID){
-    $.post('/default/ajax/getcalendar', {
-        clinicID:clinicID,
-        doctorTypeID:doctorTypeID
-    }, function(resp){
-        cityID = $('#city').val();
-        clinicTypeID = $('#clinicType').val();
-        searchText = $('#searchinput').val();
-        history.pushState('','','?clinic='+clinicID+'&doctor_speciality='+doctorTypeID+'&city='+cityID+'&clinic_managnent_form='+clinicTypeID+'&search_doc_spec='+searchText);
-        if(resp.data != '[]'){
-            select_option = $("#calendarTemplate").tmpl(JSON.parse(resp.data));
-            $("#calendarBody").html(select_option);
-            $("#calendarBody").html(html_entity_decode($("#calendarBody").html()));
-            $('#calendar').show();}
-        else{
-             $('#calendar').hide();
-        }
-        $('#clinicinfo').html(JSON.parse(resp.info)['<?=Zend_Registry::get('uds_lang')?>_about'])   ;
-        if($('#clinicinfo').text()!='')
-            $('#clinicinfo').show(); 
-        else $('#clinicinfo').hide();
-    }, 'json');
-}
-    </script>
+                <script>
+                            function updateDoctorType(cityID, clinicTypeID, searchText){
+                            $.post('/default/ajax/getdoctorstypeforcity', {
+                            cityID:cityID,
+                                    clinicType:clinicTypeID,
+                                    searchText: searchText,
+                                    uds_lang: '<?= Zend_Registry::get('uds_lang') ?>'
+                            }, function(resp){
+                            history.pushState('', '', '?city=' + cityID + '&clinic_managnent_form=' + clinicTypeID + '&search_doc_spec=' + searchText);
+                                    select_option = $("#doctortypeTemplate").tmpl(JSON.parse(resp.data));
+                                    $("#doctortype").html(select_option);
+                                    clinClinCalendar();
+                                    clinClinic();
+                            }, 'json');
+                            }
+                    function updateCalendar(clinicID, doctorTypeID){
+                    $.post('/default/ajax/getcalendar', {
+                    clinicID:clinicID,
+                            doctorTypeID:doctorTypeID
+                    }, function(resp){
+                    cityID = $('#city').val();
+                            clinicTypeID = $('#clinicType').val();
+                            searchText = $('#searchinput').val();
+                            history.pushState('', '', '?clinic=' + clinicID + '&doctor_speciality=' + doctorTypeID + '&city=' + cityID + '&clinic_managnent_form=' + clinicTypeID + '&search_doc_spec=' + searchText);
+                            if (resp.data != '[]'){
+                    select_option = $("#calendarTemplate").tmpl(JSON.parse(resp.data));
+                            $("#calendarBody").html(select_option);
+                            $("#calendarBody").html(html_entity_decode($("#calendarBody").html()));
+                            $('#calendar').show(); }
+                    else{
+                    $('#calendar').hide();
+                    }
+                    $('#clinicinfo').html(JSON.parse(resp.info)['<?= Zend_Registry::get('uds_lang') ?>_about']);
+                            if ($('#clinicinfo').text() != '')
+                            $('#clinicinfo').show();
+                            else $('#clinicinfo').hide();
+                    }, 'json');
+                    }
+                
+                    var nav = jQuery('#left-side-menu');
+                            jQuery(window).scroll(function () {
+                    if (jQuery(this).scrollTop() > 197) {
+                    nav.addClass("fixed-top");
+                    } else {
+                    nav.removeClass("fixed-top");
+                    }
+                    });
+                    
+                    function getCalendar(clinicID, doctorTypeID){
+                        window.location.href = '/<?= Zend_Registry::get('uds_lang') ?>/calendar?clinicID='+clinicID+'&doctorTypeID='+doctorTypeID;
+                    }
+                </script>
+<script src="/js/calendar_page.js"></script>

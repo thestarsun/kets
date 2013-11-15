@@ -1,5 +1,28 @@
 <?$lang = explode('/', $_SERVER['REQUEST_URI']); $lang= $lang[1];?>
-<header>
+<div class="container">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="<?= $this->url(array('lang'=>$lang), 'base')?>"><img src="/image/logo.png" alt="Logo"></a>
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="<?= $this->url(array('lang'=>$lang), 'base', true)?>" ><?= $this->translate('Help') ?></a></li>
+                        <li><a href="<?= $this->url(array('lang'=>$lang), 'aboutservice', true)?>" ><?= $this->translate('About service') ?></a></li>
+                        <li><a href="<?= $this->url(array('lang'=>$lang), 'forclinics', true)?>" ><?= $this->translate('For clinics') ?></a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--<header>
     <div class="headerTop">
         <div class ="logo">
            <a href="<?= $this->url(array('lang'=>$lang), 'base')?>"><img src="/image/logo.png"/></a> 
@@ -17,7 +40,7 @@
         <div class="line"></div>
         <ul>
             <li class="f_li"><a href="<?= $this->url(array('lang'=>$lang), 'base', true)?>" ><?= $this->translate('Help') ?></a></li>
-            <!--<li><a href="" ><?= $this->translate('For the insured') ?></a></li>-->
+            <li><a href="" ><?= $this->translate('For the insured') ?></a></li>
             <li><a href="<?= $this->url(array('lang'=>$lang), 'aboutservice', true)?>" ><?= $this->translate('About service') ?></a></li>
             <li><a href="<?= $this->url(array('lang'=>$lang), 'forclinics', true)?>" ><?= $this->translate('For clinics') ?></a></li>
             <li><a id ="profil" style ="display: none;" href="<?= $this->url(array('lang'=>$lang), 'profile')?>" ><?= $this->translate('Profile') ?></a></li>
@@ -28,7 +51,7 @@
         </ul>
     </nav>
     
-</header>
+</header>-->
 
 <script type="text/javascript">
     $(document).ready(function() {
