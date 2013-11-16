@@ -70,8 +70,8 @@ $lang = $lang[1]; ?>
                 </ul>
             </div>
             <p class="center">
-                <a class="btn btn-success" href="<?= $this->url(array('lang' => $lang), 'login', true) ?>" >Войти</a>
-                <a class="btn " href="<?= $this->url(array('lang' => $lang), 'registration', true) ?>" >Зарегистрироваться</a>
+                <a class="btn btn-success" href="<?= $this->url(array('lang' => $lang), 'login', true) ?>" ><?= $this->translate('Войти'); ?></a>
+                <a class="btn " href="<?= $this->url(array('lang' => $lang), 'registration', true) ?>" ><?= $this->translate('Зарегистрироваться'); ?></a>
             </p>
             <div style="clear:both;"></div>
             <div  id ="hoshital_type"  class="clinics_list">
@@ -91,21 +91,18 @@ $lang = $lang[1]; ?>
         </div>
     </div>
 
-
-
-
     <!--FOOTER-->
     <footer class="row-fluid">
         <div class="span3">
-            <h4 class="line3 center standart-h4title"><span>Язык</span></h4>
+            <h4 class="line3 center standart-h4title"><span><?= $this->translate('Язык'); ?></span></h4>
             <ul class="footer-links">
-                <li><a href="/uk/<?= substr($_SERVER['REQUEST_URI'], 4) ?>" >Украинский</a></li>
-                <li><a href="/ru/<?= substr($_SERVER['REQUEST_URI'], 4) ?>" >Русский</a></li>
+                <li><a href="/uk/<?= substr($_SERVER['REQUEST_URI'], 4) ?>" ><?= $this->translate('Украинский'); ?></a></li>
+                <li><a href="/ru/<?= substr($_SERVER['REQUEST_URI'], 4) ?>" ><?= $this->translate('Русский'); ?></a></li>
             </ul>
         </div>
 
         <div class="span3">
-            <h4 class="line3 center standart-h4title"><span>Меню</span></h4>
+            <h4 class="line3 center standart-h4title"><span><?= $this->translate('Меню'); ?></span></h4>
             <ul class="footer-links">
                 <li><a href="<?= $this->url(array('lang' => $lang), 'base', true) ?>" ><?= $this->translate('Help') ?></a></li>
                 <li><a href="<?= $this->url(array('lang' => $lang), 'aboutservice', true) ?>" ><?= $this->translate('About service') ?></a></li>
@@ -117,10 +114,10 @@ $lang = $lang[1]; ?>
         </div>
 
         <div class="span3">
-            <h4 class="line3 center standart-h4title"><span>Наши контакты</span></h4>
+            <h4 class="line3 center standart-h4title"><span><?= $this->translate('Наши контакты'); ?></span></h4>
             <address>
                 <strong>MedInfo.in.ua</strong><br>
-                <i class="fa-icon-map-marker"></i> г. Винница<br>
+                <i class="fa-icon-map-marker"></i><?= $this->translate('г. Винница'); ?><br>
                 21007<br>
                 <i class="fa-icon-phone-sign"></i> + 380 (432) 13-13-666
 
@@ -136,20 +133,20 @@ $lang = $lang[1]; ?>
 
 </div><!--CONTENT SIDE-->
 <script id="cityTemplate" type="text/x-jquery-tmpl">
-                            < option value = "${idtbl_city}" > ${<?= $this->lang ?>.'_name}</option>
+                            <option value = "${idtbl_city}" > ${<?= $this->lang ?>.'_name}</option>
 </script>
 <script id="doctortypeTemplate" type="text/x-jquery-tmpl">
-            < option value = "${TypeDocID}" > ${<?= $this->lang ?>_name} < /option>
+            <option value = "${TypeDocID}" > ${<?= $this->lang ?>_name} </option>
 </script>
 <script id="hoshital_typeTemplate" type="text/x-jquery-tmpl">
-            < div class = "hospital_select" paramID = "${ClinicID}" onclick = "getCalendar(${ClinicID}, $('#doctortype').val())" >
-            < a href = "javascript:void(0)" >
-            < h4 class = "clinicName" > ${ClinicName<?= strtoupper($this->lang) ?>} < /h4>                  
-            < strong class = "clinicTypeText" > ${ClinicType<?= strtoupper($this->lang) ?>} < /strong> &nbsp;&nbsp;&nbsp;         
-            < span class = "textDescribe" > ${ClinicStreet<?= strtoupper($this->lang) ?>} < /span>&nbsp;&nbsp;&nbsp;
-            < span > ${ClinicTel} < /span>
-            < /a>
-            < /div>
+            <div class = "hospital_select" paramID = "${ClinicID}" onclick = "getCalendar(${ClinicID}, $('#doctortype').val())" >
+            <a href = "javascript:void(0)" >
+            <h4 class = "clinicName" > ${ClinicName<?= strtoupper($this->lang) ?>} </h4>                  
+            <strong class = "clinicTypeText" > ${ClinicType<?= strtoupper($this->lang) ?>} </strong> &nbsp;&nbsp;&nbsp;         
+            <span class = "textDescribe" > ${ClinicStreet<?= strtoupper($this->lang) ?>} </span>&nbsp;&nbsp;&nbsp;
+            <span > ${ClinicTel} </span>
+            </a>
+            </div>
 </script>
 <script id="calendarTemplate" type="text/x-jquery-tmpl">
             < tr class = "htmlspechchars" >

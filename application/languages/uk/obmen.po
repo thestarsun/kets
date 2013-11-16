@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obmen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-08 11:51+0300\n"
-"PO-Revision-Date: 2013-07-08 11:51+0300\n"
+"POT-Creation-Date: 2013-11-16 11:29+0300\n"
+"PO-Revision-Date: 2013-11-16 11:32+0300\n"
 "Last-Translator: \n"
 "Language-Team: obmen <777secret777@gmail.com>\n"
 "Language: \n"
@@ -16,350 +16,388 @@ msgstr ""
 "X-Poedit-Language: Ukrainian\n"
 "X-Poedit-Country: UKRAINE\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-SearchPath-0: /var/www/medinfo/application\n"
+"X-Poedit-SearchPath-0: /var/www/kets/application\n"
 
-#: /var/www/medinfo/application/controllers/RegistrationController.php:58
-msgid "User with such phone nubber or email already exist"
-msgstr "Користувач з таким номером телефона або email вже зареестрований на даному сайті"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:85
-msgid "Link for activation your account"
-msgstr "Посилання для активації Вашого акаунту"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:85
-msgid "Click here."
-msgstr "Натисніть сюди."
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:102
-msgid "Не заполнено обязательное поле"
-msgstr "Не заповнено обов’язкове поле"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:105
-msgid "Для ввода Ника разрешены только все буквы, апостроф и тире!"
-msgstr "Для введення никнейму дозволені лише букви, апостроф та тире!"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:115
-msgid "Не заполнено обязательное поле - пароль!"
-msgstr "Не заповнене обов'язкове поле - пароль!"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:118
-msgid "Введенные пароли не сходяться!"
-msgstr "Введені паролі не співпадають!"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:121
-msgid "Длина пароля не меньше 6ти и не больше 18 символов!"
-msgstr "Довжина паролю не може бути меньше 6 і довше 18 символів!"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:132
-msgid "Не заполнено обязательное поле - Email\n"
-msgstr "Не заповнене обов’язкове поле  - Email\n"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:138
-msgid "Введеный адресс отправка почты не возможна"
-msgstr "На введену адресу відправка пошти не можлива"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:142
-msgid "Введеный адресс не являеться адресом електронной почты"
-msgstr "Введена адреса не є адресом електронної пошти"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:152
-msgid "Не заполнено обязательное поле - Телефон\n"
-msgstr "Не заповнено обов’язкове поле -телефон \n"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:158
-msgid "Введенные данные не являються номером телефона"
-msgstr "Введені данні не є номером телефону"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:174
-#: /var/www/medinfo/application/controllers/RegistrationController.php:191
-msgid "Error in verification"
-msgstr "Помилка при первірці данних. "
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:174
-msgid "No such user"
-msgstr "Не існуе такого користувача."
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:191
-msgid "Control summ does not match"
-msgstr "Контрольна сумма не співпадае. "
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:205
-msgid "For verification of registration to yours email was send message. Please go to link specified there"
-msgstr "Для підтверждення регістрації на Вашу електронну адресу було віслано повідомлення. Будь-ласка перейдіть по ссілці вказаній в ньому"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:206
-#: /var/www/medinfo/application/controllers/RegistrationController.php:210
-msgid "For go to base page"
-msgstr "Для переходу на головну сторінку"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:206
-#: /var/www/medinfo/application/controllers/RegistrationController.php:210
-msgid "press to link"
-msgstr "натисніть на ссилку"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:210
-msgid "Registration was successful"
-msgstr "Регістрація пройшла успішно"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:232
-msgid "You new password"
-msgstr "Ваш новий пароль"
-
-#: /var/www/medinfo/application/controllers/RegistrationController.php:233
-msgid "Change password"
-msgstr "Змінити пароль"
-
-#: /var/www/medinfo/application/controllers/AuthController.php:20
+#: /var/www/kets/application/controllers/AuthController.php:20
 msgid "You enter not right name or password"
 msgstr "Ви ввели не вірний логін чи пароль"
 
-#: /var/www/medinfo/application/layouts/partials/footer.phtml:5
-#: /var/www/medinfo/application/layouts/partials/header.phtml:19
-msgid "Help"
-msgstr "Довідка"
+#: /var/www/kets/application/controllers/RegistrationController.php:58
+msgid "User with such phone nubber or email already exist"
+msgstr "Користувач з таким номером телефона або email вже зареестрований на даному сайті"
 
-#: /var/www/medinfo/application/layouts/partials/footer.phtml:6
-#: /var/www/medinfo/application/layouts/partials/header.phtml:20
-msgid "For the insured"
-msgstr "Для застрахованих"
+#: /var/www/kets/application/controllers/RegistrationController.php:85
+msgid "Link for activation your account"
+msgstr "Посилання для активації Вашого акаунту"
 
-#: /var/www/medinfo/application/layouts/partials/footer.phtml:7
-#: /var/www/medinfo/application/layouts/partials/header.phtml:21
-msgid "About service"
-msgstr "Про сервіс"
+#: /var/www/kets/application/controllers/RegistrationController.php:85
+msgid "Click here."
+msgstr "Натисніть сюди."
 
-#: /var/www/medinfo/application/layouts/partials/footer.phtml:8
-#: /var/www/medinfo/application/layouts/partials/header.phtml:22
-msgid "For clinics"
-msgstr "Для клінік"
+#: /var/www/kets/application/controllers/RegistrationController.php:102
+msgid "Не заполнено обязательное поле"
+msgstr "Не заповнено обов’язкове поле"
 
-#: /var/www/medinfo/application/layouts/partials/header.phtml:8
-msgid "Medical information help of Ukraine"
-msgstr "Медична інформаційна довідка України"
+#: /var/www/kets/application/controllers/RegistrationController.php:105
+msgid "Для ввода Ника разрешены только все буквы, апостроф и тире!"
+msgstr "Для введення никнейму дозволені лише букви, апостроф та тире!"
 
-#: /var/www/medinfo/application/layouts/partials/header.phtml:23
-msgid "Profile"
-msgstr "Профіль"
+#: /var/www/kets/application/controllers/RegistrationController.php:115
+msgid "Не заполнено обязательное поле - пароль!"
+msgstr "Не заповнене обов'язкове поле - пароль!"
 
-#: /var/www/medinfo/application/layouts/partials/header.phtml:25
-msgid "Logout"
-msgstr "Вихід"
+#: /var/www/kets/application/controllers/RegistrationController.php:118
+msgid "Введенные пароли не сходяться!"
+msgstr "Введені паролі не співпадають!"
 
-#: /var/www/medinfo/application/layouts/partials/header.phtml:26
-msgid "Login"
-msgstr "Логін"
+#: /var/www/kets/application/controllers/RegistrationController.php:121
+msgid "Длина пароля не меньше 6ти и не больше 18 символов!"
+msgstr "Довжина паролю не може бути меньше 6 і довше 18 символів!"
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:4
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:93
-msgid "Region"
-msgstr "Область"
+#: /var/www/kets/application/controllers/RegistrationController.php:132
+msgid "Не заполнено обязательное поле - Email\n"
+msgstr "Не заповнене обов’язкове поле  - Email\n"
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:13
-msgid "Nasel punkt"
-msgstr "Населений пукт"
+#: /var/www/kets/application/controllers/RegistrationController.php:138
+msgid "Введеный адресс отправка почты не возможна"
+msgstr "На введену адресу відправка пошти не можлива"
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:22
-msgid "Type of state"
-msgstr "Тип закладу"
+#: /var/www/kets/application/controllers/RegistrationController.php:142
+msgid "Введеный адресс не являеться адресом електронной почты"
+msgstr "Введена адреса не є адресом електронної пошти"
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:24
-msgid "All"
-msgstr "Усi"
+#: /var/www/kets/application/controllers/RegistrationController.php:152
+msgid "Не заполнено обязательное поле - Телефон\n"
+msgstr "Не заповнено обов’язкове поле -телефон \n"
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:33
-msgid "Пошук: кардіолог або серце"
-msgstr ""
+#: /var/www/kets/application/controllers/RegistrationController.php:158
+msgid "Введенные данные не являються номером телефона"
+msgstr "Введені данні не є номером телефону"
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:44
-msgid "Вітаємо на сайті медичної довідки"
-msgstr ""
+#: /var/www/kets/application/controllers/RegistrationController.php:174
+#: /var/www/kets/application/controllers/RegistrationController.php:191
+msgid "Error in verification"
+msgstr "Помилка при первірці данних. "
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:45
-msgid "Щоб дізнатися розклад роботи лікаря Вам необхідно:"
-msgstr ""
+#: /var/www/kets/application/controllers/RegistrationController.php:174
+msgid "No such user"
+msgstr "Не існуе такого користувача."
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:47
-msgid "Ввести в пошук спеціальність лікаря, або назву орану, на якому спеціалізується лікар;"
-msgstr ""
+#: /var/www/kets/application/controllers/RegistrationController.php:191
+msgid "Control summ does not match"
+msgstr "Контрольна сумма не співпадае. "
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:48
-msgid "Обрати спеціальність лікаря;"
-msgstr ""
+#: /var/www/kets/application/controllers/RegistrationController.php:205
+msgid "For verification of registration to yours email was send message. Please go to link specified there"
+msgstr "Для підтверждення регістрації на Вашу електронну адресу було віслано повідомлення. Будь-ласка перейдіть по ссілці вказаній в ньому"
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:49
-msgid "Обрати лікарню, що Вас цікавить;"
-msgstr ""
+#: /var/www/kets/application/controllers/RegistrationController.php:206
+#: /var/www/kets/application/controllers/RegistrationController.php:210
+msgid "For go to base page"
+msgstr "Для переходу на головну сторінку"
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:50
-msgid "Розклад лікарів обраної Вами спеціальності та лікарні буде відображено внизу сторінки."
-msgstr ""
+#: /var/www/kets/application/controllers/RegistrationController.php:206
+#: /var/www/kets/application/controllers/RegistrationController.php:210
+msgid "press to link"
+msgstr "натисніть на ссилку"
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:74
-msgid "Monday"
-msgstr "Понедiлок"
+#: /var/www/kets/application/controllers/RegistrationController.php:210
+msgid "Registration was successful"
+msgstr "Регістрація пройшла успішно"
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:76
-msgid "Thursday"
-msgstr "Вiвторок"
+#: /var/www/kets/application/controllers/RegistrationController.php:232
+msgid "You new password"
+msgstr "Ваш новий пароль"
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:77
-msgid "Wednesday"
-msgstr "Середа"
+#: /var/www/kets/application/controllers/RegistrationController.php:233
+msgid "Change password"
+msgstr "Змінити пароль"
 
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:78
-msgid "Tuesday"
-msgstr "Четверг"
-
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:79
-msgid "Friday"
-msgstr "П'ятниця"
-
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:80
-msgid "Saturday"
-msgstr "Субота"
-
-#: /var/www/medinfo/application/views/scripts/index/index.phtml:81
-msgid "Sunday"
-msgstr "Недiля"
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:4
-msgid "Registration of new user"
-msgstr "Регістрація нового користувача"
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:9
-msgid "Phone"
-msgstr "Телефон"
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:11
-msgid "Телефон може містити лише 12 цифр та знаки +, (, )"
-msgstr ""
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:22
-msgid "Email"
-msgstr "Email"
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:35
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:38
-msgid "Password"
-msgstr "Пароль"
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:37
-msgid "Довжина паролю від 6 до 18 символів латинського алфавіту:Aa-Zz, 0-9"
-msgstr ""
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:48
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:51
-msgid "Repeat password"
-msgstr "Повторіть пароль"
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:55
-msgid "Password must take latin and cirilik digits and letters. And have lenth between 8 and 16 symbols"
-msgstr "Пароль має містити лише букви латинскько алфавіту та цифри, і мати довжину від 8 до 16 символів."
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:60
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:63
-msgid "Last Name"
-msgstr "Фамілія"
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:71
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:74
-msgid "First name"
-msgstr "Ім’я"
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:82
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:85
-msgid "Middle name"
-msgstr "По-батькові"
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:95
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:111
-msgid "Имя может состоять из любого количества букв, тире, апострофов, пробелов на кирилицой ли латинскими буквами"
-msgstr ""
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:97
-msgid "Select region"
-msgstr "Виберіть область"
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:109
-msgid "City"
-msgstr "Місто"
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:113
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:161
-msgid "Select city"
-msgstr "Віберіть місто"
-
-#: /var/www/medinfo/application/views/scripts/registration/index.phtml:122
-msgid "To registration"
-msgstr "Регістрація"
-
-#: /var/www/medinfo/application/views/scripts/registration/licence.phtml:6
-msgid "Лицензионное соглашение на DLE Forum"
-msgstr ""
-
-#: /var/www/medinfo/application/views/scripts/registration/forgetpassword.phtml:5
-msgid "We will sent message with new password to you email."
-msgstr "Вам буде надіслано повідомлення з новим паролем на Ваш email."
-
-#: /var/www/medinfo/application/views/scripts/registration/forgetpassword.phtml:6
-#: /var/www/medinfo/application/views/scripts/registration/forgetpassword.phtml:27
-#: /var/www/medinfo/application/views/scripts/registration/forgetpassword.phtml:32
-msgid "Enter your email"
-msgstr "Введіть Ваш email."
-
-#: /var/www/medinfo/application/views/scripts/registration/forgetpassword.phtml:12
-msgid "Send"
-msgstr "Відправити"
-
-#: /var/www/medinfo/application/views/scripts/registration/forgetpassword.phtml:19
-msgid "The message with new password was send to you email."
-msgstr "Лист з новим паролем було надіслано на Ваш email."
-
-#: /var/www/medinfo/application/views/scripts/registration/forgetpassword.phtml:25
-msgid "There are no account registarited to this email in this site."
-msgstr "Аккаунт з таким паролем не зареєстрований на даному сайті"
-
-#: /var/www/medinfo/application/views/scripts/user/profile.phtml:3
+#: /var/www/kets/application/views/scripts/user/profile.phtml:3
 #, fuzzy
 msgid "Your profile"
 msgstr "Профіль"
 
-#: /var/www/medinfo/application/views/scripts/user/profile.phtml:7
+#: /var/www/kets/application/views/scripts/user/profile.phtml:7
 msgid "Last name"
 msgstr "Фамілія"
 
-#: /var/www/medinfo/application/views/scripts/user/profile.phtml:94
+#: /var/www/kets/application/views/scripts/user/profile.phtml:18
+msgid "First name"
+msgstr "Ім’я"
+
+#: /var/www/kets/application/views/scripts/user/profile.phtml:29
+msgid "Middle name"
+msgstr "По-батькові"
+
+#: /var/www/kets/application/views/scripts/user/profile.phtml:40
+msgid "Region"
+msgstr "Область"
+
+#: /var/www/kets/application/views/scripts/user/profile.phtml:44
+msgid "Select region"
+msgstr "Виберіть область"
+
+#: /var/www/kets/application/views/scripts/user/profile.phtml:56
+msgid "City"
+msgstr "Місто"
+
+#: /var/www/kets/application/views/scripts/user/profile.phtml:60
+#: /var/www/kets/application/views/scripts/user/profile.phtml:133
+msgid "Select city"
+msgstr "Віберіть місто"
+
+#: /var/www/kets/application/views/scripts/user/profile.phtml:70
+msgid "Phone"
+msgstr "Телефон"
+
+#: /var/www/kets/application/views/scripts/user/profile.phtml:82
+msgid "Email"
+msgstr "Email"
+
+#: /var/www/kets/application/views/scripts/user/profile.phtml:94
 msgid "Save"
 msgstr "Зберігти"
 
-#: /var/www/medinfo/application/views/scripts/auth/login.phtml:6
-msgid "Portal work on test mode"
-msgstr "Портал працюе в тестовому режимі"
+#: /var/www/kets/application/views/scripts/auth/login.phtml:8
+msgid "Login"
+msgstr "Логін"
 
-#: /var/www/medinfo/application/views/scripts/auth/login.phtml:22
-msgid "Enter"
-msgstr "Вхід"
+#: /var/www/kets/application/views/scripts/auth/login.phtml:9
+msgid "Password"
+msgstr "Пароль"
 
-#: /var/www/medinfo/application/views/scripts/auth/login.phtml:24
+#: /var/www/kets/application/views/scripts/auth/login.phtml:13
 msgid "Signup"
 msgstr "Регістрація"
 
-#: /var/www/medinfo/application/views/scripts/auth/login.phtml:25
+#: /var/www/kets/application/views/scripts/auth/login.phtml:14
 #, fuzzy
 msgid "Restore password"
 msgstr "Ваш новий пароль"
 
-#: /var/www/medinfo/application/views/scripts/ajax/city.phtml:1
-msgid "Виберіть місто"
-msgstr ""
+#: /var/www/kets/application/views/scripts/auth/login.phtml:15
+msgid "Enter"
+msgstr "Вхід"
 
-#: /var/www/medinfo/application/views/scripts/ajax/calendar.phtml:5
+#: /var/www/kets/application/views/scripts/ajax/calendar.phtml:5
 msgid "Previous week"
 msgstr "Попередній тиждень"
 
-#: /var/www/medinfo/application/views/scripts/ajax/calendar.phtml:10
+#: /var/www/kets/application/views/scripts/ajax/calendar.phtml:10
 msgid "Next week"
 msgstr "Наступний тиждень"
+
+#: /var/www/kets/application/views/scripts/ajax/calendar.phtml:16
+#: /var/www/kets/application/views/scripts/index/calendar.phtml:30
+msgid "Monday"
+msgstr "Понедiлок"
+
+#: /var/www/kets/application/views/scripts/ajax/calendar.phtml:18
+#: /var/www/kets/application/views/scripts/index/calendar.phtml:33
+msgid "Thursday"
+msgstr "Вiвторок"
+
+#: /var/www/kets/application/views/scripts/ajax/calendar.phtml:19
+#: /var/www/kets/application/views/scripts/index/calendar.phtml:32
+msgid "Wednesday"
+msgstr "Середа"
+
+#: /var/www/kets/application/views/scripts/ajax/calendar.phtml:20
+#: /var/www/kets/application/views/scripts/index/calendar.phtml:31
+msgid "Tuesday"
+msgstr "Четверг"
+
+#: /var/www/kets/application/views/scripts/ajax/calendar.phtml:21
+#: /var/www/kets/application/views/scripts/index/calendar.phtml:34
+msgid "Friday"
+msgstr "П'ятниця"
+
+#: /var/www/kets/application/views/scripts/ajax/calendar.phtml:22
+#: /var/www/kets/application/views/scripts/index/calendar.phtml:35
+msgid "Saturday"
+msgstr "Субота"
+
+#: /var/www/kets/application/views/scripts/ajax/calendar.phtml:23
+#: /var/www/kets/application/views/scripts/index/calendar.phtml:36
+msgid "Sunday"
+msgstr "Недiля"
+
+#: /var/www/kets/application/views/scripts/ajax/city.phtml:1
+msgid "Виберіть місто"
+msgstr ""
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:17
+msgid "Nasel punkt"
+msgstr "Населений пукт"
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:26
+msgid "Type of state"
+msgstr "Тип закладу"
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:28
+msgid "All"
+msgstr "Усi"
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:37
+msgid "Пошук: кардіолог або серце"
+msgstr ""
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:62
+msgid "Вітаємо на сайті медичної довідки"
+msgstr ""
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:64
+msgid "Щоб дізнатися розклад роботи лікаря Вам необхідно:"
+msgstr ""
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:66
+msgid "Ввести в пошук спеціальність лікаря, або назву орану, на якому спеціалізується лікар;"
+msgstr ""
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:67
+msgid "Обрати спеціальність лікаря;"
+msgstr ""
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:68
+msgid "Обрати лікарню, що Вас цікавить;"
+msgstr ""
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:69
+msgid "Розклад лікарів обраної Вами спеціальності та лікарні буде відображено внизу сторінки."
+msgstr ""
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:73
+msgid "Войти"
+msgstr "Вхід"
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:74
+msgid "Зарегистрироваться"
+msgstr "Реестрація"
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:94
+msgid "Язык((((((((((((9"
+msgstr ""
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:100
+msgid "Язык"
+msgstr "Мова"
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:102
+msgid "Украинский"
+msgstr "Україньська"
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:103
+msgid "Русский"
+msgstr "Російська"
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:108
+msgid "Меню"
+msgstr "Меню"
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:110
+msgid "Help"
+msgstr "Довідка"
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:111
+msgid "About service"
+msgstr "Про сервіс"
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:112
+msgid "For clinics"
+msgstr "Для клінік"
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:120
+msgid "Наши контакты"
+msgstr "Наші контакти"
+
+#: /var/www/kets/application/views/scripts/index/index.phtml:123
+msgid "г. Винница"
+msgstr "м.Вінниця"
+
+#: /var/www/kets/application/views/scripts/index/calendar.phtml:26
+msgid "Расписание работы врача:"
+msgstr "Розклад роботи лікаря"
+
+#: /var/www/kets/application/views/scripts/registration/licence.phtml:6
+msgid "Лицензионное соглашение на DLE Forum"
+msgstr "Ліцензійний договір на DLE Forum"
+
+#: /var/www/kets/application/views/scripts/registration/index.phtml:4
+msgid "Registration of new user"
+msgstr "Регістрація нового користувача"
+
+#: /var/www/kets/application/views/scripts/registration/index.phtml:11
+msgid "Телефон може містити лише 12 цифр та знаки +, (, )"
+msgstr ""
+
+#: /var/www/kets/application/views/scripts/registration/index.phtml:37
+msgid "Довжина паролю від 6 до 18 символів латинського алфавіту:Aa-Zz, 0-9"
+msgstr ""
+
+#: /var/www/kets/application/views/scripts/registration/index.phtml:48
+#: /var/www/kets/application/views/scripts/registration/index.phtml:51
+msgid "Repeat password"
+msgstr "Повторіть пароль"
+
+#: /var/www/kets/application/views/scripts/registration/index.phtml:55
+msgid "Password must take latin and cirilik digits and letters. And have lenth between 8 and 16 symbols"
+msgstr "Пароль має містити лише букви латинскько алфавіту та цифри, і мати довжину від 8 до 16 символів."
+
+#: /var/www/kets/application/views/scripts/registration/index.phtml:60
+#: /var/www/kets/application/views/scripts/registration/index.phtml:63
+msgid "Last Name"
+msgstr "Фамілія"
+
+#: /var/www/kets/application/views/scripts/registration/index.phtml:95
+#: /var/www/kets/application/views/scripts/registration/index.phtml:111
+msgid "Имя может состоять из любого количества букв, тире, апострофов, пробелов на кирилицой ли латинскими буквами"
+msgstr ""
+
+#: /var/www/kets/application/views/scripts/registration/index.phtml:122
+msgid "To registration"
+msgstr "Регістрація"
+
+#: /var/www/kets/application/views/scripts/registration/forgetpassword.phtml:5
+msgid "We will sent message with new password to you email."
+msgstr "Вам буде надіслано повідомлення з новим паролем на Ваш email."
+
+#: /var/www/kets/application/views/scripts/registration/forgetpassword.phtml:6
+#: /var/www/kets/application/views/scripts/registration/forgetpassword.phtml:27
+#: /var/www/kets/application/views/scripts/registration/forgetpassword.phtml:32
+msgid "Enter your email"
+msgstr "Введіть Ваш email."
+
+#: /var/www/kets/application/views/scripts/registration/forgetpassword.phtml:12
+msgid "Send"
+msgstr "Відправити"
+
+#: /var/www/kets/application/views/scripts/registration/forgetpassword.phtml:19
+msgid "The message with new password was send to you email."
+msgstr "Лист з новим паролем було надіслано на Ваш email."
+
+#: /var/www/kets/application/views/scripts/registration/forgetpassword.phtml:25
+msgid "There are no account registarited to this email in this site."
+msgstr "Аккаунт з таким паролем не зареєстрований на даному сайті"
+
+#: /var/www/kets/application/layouts/partials/header.phtml:31
+msgid "Medical information help of Ukraine"
+msgstr "Медична інформаційна довідка України"
+
+#: /var/www/kets/application/layouts/partials/header.phtml:43
+msgid "For the insured"
+msgstr "Для застрахованих"
+
+#: /var/www/kets/application/layouts/partials/header.phtml:46
+msgid "Profile"
+msgstr "Профіль"
+
+#: /var/www/kets/application/layouts/partials/header.phtml:48
+msgid "Logout"
+msgstr "Вихід"
+
+#~ msgid "Portal work on test mode"
+#~ msgstr "Портал працюе в тестовому режимі"
 
 #~ msgid "Position_status"
 #~ msgstr "украинский"

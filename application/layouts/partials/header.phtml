@@ -1,3 +1,6 @@
+<?$controller = Zend_Controller_Front::getInstance()->getRequest()->getControllerName();
+    $action = Zend_Controller_Front::getInstance()->getRequest()->getActionName();
+?>
 <?$lang = explode('/', $_SERVER['REQUEST_URI']); $lang= $lang[1];?>
 <div class="container">
     <div class="navbar">
@@ -12,9 +15,9 @@
 
                 <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li class="active"><a href="<?= $this->url(array('lang'=>$lang), 'base', true)?>" ><?= $this->translate('Help') ?></a></li>
-                        <li><a href="<?= $this->url(array('lang'=>$lang), 'aboutservice', true)?>" ><?= $this->translate('About service') ?></a></li>
-                        <li><a href="<?= $this->url(array('lang'=>$lang), 'forclinics', true)?>" ><?= $this->translate('For clinics') ?></a></li>
+                        <li<?if($controller =='index' && $action =='index'):?> class="active"<?endif?>><a href="<?= $this->url(array('lang'=>$lang), 'base', true)?>" ><?= $this->translate('Help') ?></a></li>
+                        <li<?if($controller =='index' && $action =='aboutservice'):?> class="active"<?endif?>><a href="<?= $this->url(array('lang'=>$lang), 'aboutservice', true)?>" ><?= $this->translate('About service') ?></a></li>
+                        <li<?if($controller =='index' && $action =='forclinics'):?> class="active"<?endif?>><a href="<?= $this->url(array('lang'=>$lang), 'forclinics', true)?>" ><?= $this->translate('For clinics') ?></a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
